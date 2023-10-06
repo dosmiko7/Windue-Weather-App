@@ -30,4 +30,21 @@ html {
     background-color: rgba(100,100,100)
 }
 
+input {
+  font: inherit;
+  color: inherit;
+  border: none;
+  background-color: transparent;
+}
+
+input:hover {
+  outline: none;
+  border: none;
+}
+
+input:focus {
+  outline: none;
+  border: none;
+}
+
 `;
