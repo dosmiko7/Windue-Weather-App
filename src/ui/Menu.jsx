@@ -1,8 +1,7 @@
 import { styled } from "styled-components";
+import { Container } from "./Container";
 
-const StyledMenu = styled.div`
-	border: 1px solid yellow;
-`;
+const StyledMenu = styled(Container)``;
 
 const Menu = () => {
 	return <StyledMenu>menu</StyledMenu>;

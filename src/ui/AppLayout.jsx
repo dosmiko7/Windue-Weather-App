@@ -9,11 +9,11 @@ const StyledAppLayout = styled.div`
 	grid-template-columns: 1fr 3fr 2fr;
 	column-gap: 2rem;
 	padding: 2.2rem;
+	background-color: var(--background-app-1);
 
 	width: 1600px;
 	height: 800px;
 	margin: 30px auto;
-	border: 1px solid red;
 `;
 
 const AppLayout = () => {

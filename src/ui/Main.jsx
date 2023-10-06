@@ -1,8 +1,6 @@
 import { styled } from "styled-components";
 
-const StyledMain = styled.section`
-	border: 1px solid blue;
-`;
+const StyledMain = styled.section``;
 
 const Main = () => {
 	return (
