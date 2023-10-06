@@ -1,4 +1,7 @@
+import AppLayout from "./ui/AppLayout";
 
-const App = () => {};
+const App = () => {
+	return <AppLayout />;
+};
 
 export default App;
