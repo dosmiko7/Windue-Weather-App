@@ -5,6 +5,8 @@ const Container = styled.div`
 	border-radius: 10px;
 	color: var(--font-color-1);
 	font-size: 2rem;
+	padding: 2rem;
+	max-height: 100%;
 `;
 
 export default Container;

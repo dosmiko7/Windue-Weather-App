@@ -9,12 +9,18 @@ export const GlobalStyles = createGlobalStyle`
 
       --font-color-1: #fff;
       --font-color-2: #d1d1d1;
+
+      --font-weight-300: 300;
+      --font-weight-400: 400;
+      --font-weight-500: 500;
+      --font-weight-700: 700;
   }
   
   &.light-mode {
     
 
   }
+  
 }
 
 *,
@@ -51,5 +57,6 @@ input:focus {
   outline: none;
   border: none;
 }
+
 
 `;
