@@ -6,7 +6,7 @@ import Sidebar from "./Sidebar";
 // TODO: Change width and height to rem;
 const StyledAppLayout = styled.div`
 	display: grid;
-	grid-template-columns: 1fr 4fr 2fr;
+	grid-template-columns: 1fr 5fr 3fr;
 	column-gap: 2rem;
 	padding: 2.2rem;
 	background-color: var(--background-app-1);

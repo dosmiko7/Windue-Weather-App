@@ -41,6 +41,10 @@ body {
   font-family: 'Ubuntu', sans-serif;
 }
 
+ul {
+  list-style: none;
+}
+
 input {
   font: inherit;
   color: inherit;

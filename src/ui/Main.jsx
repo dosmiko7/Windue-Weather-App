@@ -2,6 +2,8 @@ import { styled } from "styled-components";
 import Search from "../features/Search";
 import BasicInfo from "../features/BasicInfo";
 import Container from "./Container";
+import TodayForecast from "../features/TodayForecast";
+import AirCondition from "../features/AirConditions";
 
 const StyledMain = styled(Container)`
 	display: grid;
@@ -9,6 +11,7 @@ const StyledMain = styled(Container)`
 	row-gap: 1.2rem;
 	background-color: transparent;
 	padding-top: 0;
+	padding-bottom: 0;
 `;
 
 const Main = () => {
@@ -16,6 +19,8 @@ const Main = () => {
 		<StyledMain>
 			<Search />
 			<BasicInfo />
+			<TodayForecast />
+			<AirCondition />
 		</StyledMain>
 	);
 };
