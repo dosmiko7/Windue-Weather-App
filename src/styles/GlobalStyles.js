@@ -27,7 +27,12 @@ export const GlobalStyles = createGlobalStyle`
 
 html {
 	font-size: 62.5%;
-    background-color: rgba(100,100,100)
+  background-color: rgba(100,100,100);
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: 'Ubuntu', sans-serif;
 }
 
 input {
