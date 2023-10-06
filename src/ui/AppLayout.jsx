@@ -7,9 +7,12 @@ import Sidebar from "./Sidebar";
 const StyledAppLayout = styled.div`
 	display: grid;
 	grid-template-columns: 1fr 3fr 2fr;
+	column-gap: 2rem;
+	padding: 2.2rem;
+
 	width: 1600px;
 	height: 800px;
-	margin: 0 auto;
+	margin: 30px auto;
 	border: 1px solid red;
 `;
 

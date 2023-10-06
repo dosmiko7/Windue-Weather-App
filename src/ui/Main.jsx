@@ -1,8 +1,14 @@
+import { styled } from "styled-components";
+
+const StyledMain = styled.section`
+	border: 1px solid blue;
+`;
+
 const Main = () => {
 	return (
-		<section>
+		<StyledMain>
 			<p>MAIN</p>
-		</section>
+		</StyledMain>
 	);
 };
 
