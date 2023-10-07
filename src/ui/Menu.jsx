@@ -14,7 +14,7 @@ const Menu = () => {
 	return (
 		<StyledMenu>
 			<Logo />
-			<MainNav></MainNav>
+			<MainNav />
 		</StyledMenu>
 	);
 };

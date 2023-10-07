@@ -20,7 +20,10 @@ const TodayForecast = () => {
 	return (
 		<StyledTodayForecast>
 			<ContainerName>Today&apos;s Forecast</ContainerName>
-			<ForecastList forecast={FORECAST} />
+			<ForecastList
+				forecast={FORECAST}
+				type="horizontal"
+			/>
 		</StyledTodayForecast>
 	);
 };
