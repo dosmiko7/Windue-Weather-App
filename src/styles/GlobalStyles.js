@@ -7,6 +7,7 @@ export const GlobalStyles = createGlobalStyle`
 
       --background-container-1: #202b3b;
       --background-container-2: #35455e;
+      --background-container-3: #5d6a7e;
 
       --font-color-1: #d1d1d1;
       --font-color-2: #fff;
@@ -63,6 +64,15 @@ input:hover {
 input:focus {
   outline: none;
   border: none;
+}
+
+button {
+  background-color: transparent;
+  color: inherit;
+
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 
