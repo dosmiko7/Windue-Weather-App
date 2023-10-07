@@ -3,7 +3,7 @@ import Search from "../features/Search";
 import BasicInfo from "../features/BasicInfo";
 import Container from "./Container";
 import TodayForecast from "../features/Forecast/TodayForecast";
-import AirCondition from "../features/AirConditions";
+import AirCondition from "../features/Air/AirConditions";
 
 const StyledMain = styled(Container)`
 	display: grid;

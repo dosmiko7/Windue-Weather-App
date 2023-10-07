@@ -11,6 +11,7 @@ const StyledAppLayout = styled.div`
 	background-color: var(--background-app-1);
 	width: 160rem;
 	height: 80rem;
+	border-radius: 20px;
 
 	margin: 30px auto;
 `;
