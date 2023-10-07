@@ -3,7 +3,6 @@ import Main from "./Main";
 import Menu from "./Menu";
 import Sidebar from "./Sidebar";
 
-// TODO: Change width and height to rem;
 const StyledAppLayout = styled.div`
 	display: grid;
 	grid-template-columns: 1fr 5fr 3fr;

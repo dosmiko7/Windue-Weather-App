@@ -6,6 +6,7 @@ export const GlobalStyles = createGlobalStyle`
       --background-app-1: #0b131e;
 
       --background-container-1: #202b3b;
+      --background-container-2: #35455e;
 
       --font-color-1: #fff;
       --font-color-2: #d1d1d1;
