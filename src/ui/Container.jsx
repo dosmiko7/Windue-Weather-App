@@ -7,7 +7,7 @@ export const ContainerName = styled.h6`
 
 const Container = styled.div`
 	background-color: var(--background-container-1);
-	border-radius: 10px;
+	border-radius: 20px;
 	color: var(--font-color-1);
 	font-size: 2rem;
 	padding: 2rem;

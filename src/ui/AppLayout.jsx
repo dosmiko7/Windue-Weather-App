@@ -5,7 +5,7 @@ import Sidebar from "./Sidebar";
 
 const StyledAppLayout = styled.div`
 	display: grid;
-	grid-template-columns: 1fr 5fr 3fr;
+	grid-template-columns: 0.8fr 6fr 3fr;
 	column-gap: 2rem;
 	padding: 2.2rem;
 	background-color: var(--background-app-1);

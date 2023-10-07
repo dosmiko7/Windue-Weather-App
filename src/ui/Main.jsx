@@ -7,7 +7,7 @@ import AirCondition from "../features/Air/AirConditions";
 
 const StyledMain = styled(Container)`
 	display: grid;
-	grid-template-rows: 1fr 5fr 4fr 4fr;
+	grid-template-rows: 1fr 4fr 4fr 4fr;
 	row-gap: 1.2rem;
 	background-color: transparent;
 	padding-top: 0;
