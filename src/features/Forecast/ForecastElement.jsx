@@ -1,41 +1,44 @@
-import { styled } from "styled-components";
+import { styled, css } from "styled-components";
 import PropTypes from "prop-types";
 
-import ForecastCondition from "./ForecastCondition";
+import ForecastElementHorizontal from "./ForecastElementVertical";
+import ForecastElementVertical from "./ForecastElementHorizontal";
 
 const StyledForecastElement = styled.li`
 	display: flex;
-	flex-direction: column;
+
 	align-items: center;
 	justify-content: space-between;
 	flex-grow: 1;
+
+	${(props) =>
+		props.type === "horizontal" &&
+		css`
+			flex-direction: column;
+		`}
+
+	${(props) =>
+		props.type === "vertical" &&
+		css`
+			flex-direction: row;
+		`}
 `;
 
-const Time = styled.span`
-	text-transform: uppercase;
-	font-weight: var(--font-weight-500);
-`;
-
-const Temperature = styled.span`
-	font-weight: var(--font-weight-500);
-	font-size: 2.8rem;
-	color: var(--font-color-2);
-`;
-
-const ForecastElement = ({ data }) => {
-	const { time, condition, temp } = data;
-
+const ForecastElement = ({ data, type }) => {
 	return (
-		<StyledForecastElement>
-			<Time>{time}</Time>
-			<ForecastCondition condition={condition} />
-			<Temperature>{temp}&#8451;</Temperature>
+		<StyledForecastElement type={type}>
+			{type === "horizontal" ? <ForecastElementHorizontal data={data} /> : <ForecastElementVertical data={data} />}
 		</StyledForecastElement>
 	);
 };
 
 ForecastElement.propTypes = {
 	data: PropTypes.object.isRequired,
+	type: PropTypes.string,
+};
+
+StyledForecastElement.defaultProps = {
+	type: "horizontal",
 };
 
 export default ForecastElement;

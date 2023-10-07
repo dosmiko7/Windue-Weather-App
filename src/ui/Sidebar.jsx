@@ -1,13 +1,7 @@
-import { styled } from "styled-components";
-import Container from "./Container";
-
-const StyledSidebar = styled(Container)`
-	margin-top: 6rem;
-	
-`;
+import SevenDayForecast from "../features/Forecast/SevenDayForecast";
 
 const Sidebar = () => {
-	return <StyledSidebar>Sidebar</StyledSidebar>;
+	return <SevenDayForecast />;
 };
 
 export default Sidebar;
