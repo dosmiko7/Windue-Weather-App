@@ -8,6 +8,8 @@ export const GlobalStyles = createGlobalStyle`
       --background-container-1: #202b3b;
       --background-container-2: #35455e;
       --background-container-3: #5d6a7e;
+      --background-container-4: #0095ff;
+      --background-container-5: #004b80;
 
       --font-color-1: #d1d1d1;
       --font-color-2: #fff;
