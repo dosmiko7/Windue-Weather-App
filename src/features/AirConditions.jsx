@@ -1,10 +1,14 @@
 import { styled } from "styled-components";
-import Container from "../ui/Container";
+import Container, { ContainerName } from "../ui/Container";
 
 const StyledAirCondition = styled(Container)``;
 
 const AirCondition = () => {
-	return <StyledAirCondition>AirCondition</StyledAirCondition>;
+	return (
+		<StyledAirCondition>
+			<ContainerName>Air Conditions</ContainerName>
+		</StyledAirCondition>
+	);
 };
 
 export default AirCondition;

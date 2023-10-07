@@ -1,8 +1,10 @@
 import { styled } from "styled-components";
-import Container from "../../ui/Container";
+import Container, { ContainerName } from "../../ui/Container";
 import ForecastList from "./ForecastList";
 
-const StyledTodayForecast = styled(Container)``;
+const StyledTodayForecast = styled(Container)`
+	padding: 2.4rem 1.6rem;
+`;
 
 //TODO: Generate list's elements from API
 const FORECAST = [
@@ -17,6 +19,7 @@ const FORECAST = [
 const TodayForecast = () => {
 	return (
 		<StyledTodayForecast>
+			<ContainerName>Today&apos;s Forecast</ContainerName>
 			<ForecastList forecast={FORECAST} />
 		</StyledTodayForecast>
 	);

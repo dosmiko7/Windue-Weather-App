@@ -5,12 +5,22 @@ import ForecastCondition from "./ForecastCondition";
 
 const StyledForecastElement = styled.li`
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	flex-grow: 1;
 `;
 
-const Time = styled.span``;
+const Time = styled.span`
+	text-transform: uppercase;
+	font-weight: var(--font-weight-500);
+`;
 
-const Temperature = styled.span``;
+const Temperature = styled.span`
+	font-weight: var(--font-weight-500);
+	font-size: 2.8rem;
+	color: var(--font-color-2);
+`;
 
 const ForecastElement = ({ data }) => {
 	const { time, condition, temp } = data;
@@ -19,7 +29,7 @@ const ForecastElement = ({ data }) => {
 		<StyledForecastElement>
 			<Time>{time}</Time>
 			<ForecastCondition condition={condition} />
-			<Temperature>{temp}</Temperature>
+			<Temperature>{temp}&#8451;</Temperature>
 		</StyledForecastElement>
 	);
 };

@@ -8,13 +8,15 @@ export const GlobalStyles = createGlobalStyle`
       --background-container-1: #202b3b;
       --background-container-2: #35455e;
 
-      --font-color-1: #fff;
-      --font-color-2: #d1d1d1;
+      --font-color-1: #d1d1d1;
+      --font-color-2: #fff;
 
       --font-weight-300: 300;
       --font-weight-400: 400;
       --font-weight-500: 500;
       --font-weight-700: 700;
+
+      --misc-color-1: #283549;
   }
   
   &.light-mode {

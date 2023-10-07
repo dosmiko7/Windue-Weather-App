@@ -1,5 +1,10 @@
 import { styled } from "styled-components";
 
+export const ContainerName = styled.h6`
+	margin-left: 0.6rem;
+	text-transform: uppercase;
+`;
+
 const Container = styled.div`
 	background-color: var(--background-container-1);
 	border-radius: 10px;

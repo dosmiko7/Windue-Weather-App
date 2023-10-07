@@ -13,17 +13,18 @@ const InfoContainer = styled.div`
 	flex-direction: column;
 `;
 
-const CityNameInfo = styled.h1``;
-
-const RainInfo = styled.h4`
-	font-size: 1.4rem;
-	font-weight: var(--font-weight-500);
+const CityNameInfo = styled.h1`
 	color: var(--font-color-2);
+`;
+
+const RainInfo = styled.h6`
+	font-weight: var(--font-weight-500);
 	padding: 1.2rem 0;
 	flex-grow: 1;
 `;
 
 const TemperatureInfo = styled.span`
+	color: var(--font-color-2);
 	font-size: 4.2rem;
 	font-weight: var(--font-weight-700);
 `;
@@ -37,7 +38,6 @@ const ImageContainer = styled.div`
 
 	border: 1px solid red;
 `;
-
 
 const BasicInfo = () => {
 	const cityName = "Madrid";

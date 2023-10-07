@@ -5,9 +5,12 @@ import ForecastElement from "./ForecastElement";
 
 const StyledForecastList = styled.ul`
 	display: flex;
+	height: 100%;
+	padding: 1.6rem 0;
+	font-size: 1.6rem;
 
 	li:not(:last-child) {
-		border-right: 1px solid #000;
+		border-right: 2px solid var(--misc-color-1);
 	}
 `;
 
