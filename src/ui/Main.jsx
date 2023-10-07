@@ -2,7 +2,7 @@ import { styled } from "styled-components";
 import Search from "../features/Search";
 import BasicInfo from "../features/BasicInfo";
 import Container from "./Container";
-import TodayForecast from "../features/TodayForecast";
+import TodayForecast from "../features/Forecast/TodayForecast";
 import AirCondition from "../features/AirConditions";
 
 const StyledMain = styled(Container)`
