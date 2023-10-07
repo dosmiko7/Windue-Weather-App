@@ -1,12 +1,13 @@
 import { styled } from "styled-components";
-import Container from "../ui/Container";
-import Form from "../ui/Form";
-import Input from "../ui/Input";
+import Container from "./Container";
+import Form from "./Form";
+import Input from "./Input";
 
 const SearchBox = styled(Container)`
 	display: flex;
 	align-items: center;
-	padding: 0 1rem;
+	padding: 0.8rem 1rem;
+	width: 65%;
 `;
 
 const Search = () => {

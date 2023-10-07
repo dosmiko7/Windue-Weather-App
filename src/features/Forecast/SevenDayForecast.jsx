@@ -2,9 +2,7 @@ import { styled } from "styled-components";
 import Container, { ContainerName } from "../../ui/Container";
 import ForecastList from "./ForecastList";
 
-const StyledSevenDayForecast = styled(Container)`
-	margin-top: 6rem;
-`;
+const StyledSevenDayForecast = styled(Container)``;
 
 // TODO: Change into data from API
 const FORECAST = [

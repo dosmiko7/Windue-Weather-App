@@ -2,7 +2,6 @@ import { styled } from "styled-components";
 import Container from "../ui/Container";
 
 const StyledBasicInfo = styled(Container)`
-	padding: 2.8rem 3.2rem;
 	background-color: inherit;
 	display: flex;
 `;
@@ -39,6 +38,7 @@ const ImageContainer = styled.div`
 	border: 1px solid red;
 `;
 
+// TODO: Change dump data to API's data
 const BasicInfo = () => {
 	const cityName = "Madrid";
 	const rainProb = 0;
