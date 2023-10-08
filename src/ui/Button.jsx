@@ -13,11 +13,11 @@ const types = {
 
 		&:hover {
 			color: var(--font-color-2);
-			background-color: var(--background-container-2);
+			background-color: var(--background-color-2);
 		}
 
 		&:active {
-			background-color: var(--background-container-3);
+			background-color: var(--background-color-3);
 		}
 	`,
 
@@ -27,16 +27,16 @@ const types = {
 		justify-content: center;
 		padding: 0.6rem 1.6rem;
 		color: var(--font-color-2);
-		background-color: var(--background-container-4);
+		background-color: var(--background-color-4);
 		font-weight: var(--font-weight-700);
 
 		&:hover {
 			color: var(--font-color-2);
-			background-color: var(--background-container-5);
+			background-color: var(--background-color-5);
 		}
 
 		&:active {
-			background-color: var(--background-container-4);
+			background-color: var(--background-color-4);
 			transform: translateY(3px);
 		}
 	`,

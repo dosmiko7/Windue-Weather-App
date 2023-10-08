@@ -14,7 +14,7 @@ const variants = {
 };
 
 const StyledLogo = styled.div`
-	background-color: var(--background-container-2);
+	background-color: var(--background-color-2);
 	display: flex;
 	align-items: center;
 	justify-content: center;
