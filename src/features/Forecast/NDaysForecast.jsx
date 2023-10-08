@@ -19,7 +19,7 @@ const NDaysForecast = ({ daysCount }) => {
 		<Container>
 			<ContainerName>{daysCount}-Day Forecast</ContainerName>
 			<ForecastList
-				forecast={FORECAST.slice({ daysCount })}
+				forecast={FORECAST.slice(0, daysCount)}
 				type="vertical"
 			/>
 		</Container>

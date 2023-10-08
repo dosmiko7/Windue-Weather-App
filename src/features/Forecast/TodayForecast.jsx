@@ -23,7 +23,7 @@ const TodayForecast = ({ hoursCount }) => {
 		<StyledTodayForecast>
 			<ContainerName>Today&apos;s Forecast</ContainerName>
 			<ForecastList
-				forecast={FORECAST.slice({ hoursCount })}
+				forecast={FORECAST.slice(0, hoursCount)}
 				type="horizontal"
 			/>
 		</StyledTodayForecast>
