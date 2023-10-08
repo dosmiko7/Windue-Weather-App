@@ -8,20 +8,20 @@ const ListElement = styled.li`
 	flex-grow: 1;
 
 	${(props) =>
-		props.type === "horizontal" &&
+		props.type === "vertical" &&
 		css`
 			flex-direction: column;
 		`}
 
 	${(props) =>
-		props.type === "vertical" &&
+		props.type === "horizontal" &&
 		css`
 			flex-direction: row;
 		`}
 `;
 
 ListElement.defaultProps = {
-	type: "horizontal",
+	type: "vertical",
 };
 
 export default ListElement;

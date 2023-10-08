@@ -12,13 +12,15 @@ const StyledForecastList = styled(List)`
 
 // TODO: change key
 const ForecastList = ({ forecast, type }) => {
+	const elementType = type === "vertical" ? "horizontal" : "vertical";
+
 	return (
 		<StyledForecastList type={type}>
 			{forecast.map((item) => (
 				<ForecastElement
 					key={Math.random()}
 					data={item}
-					type={type}
+					elementType={elementType}
 				/>
 			))}
 		</StyledForecastList>

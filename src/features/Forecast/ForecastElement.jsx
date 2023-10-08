@@ -1,20 +1,24 @@
 import PropTypes from "prop-types";
 
-import ForecastElementHorizontal from "./ForecastElementVertical";
-import ForecastElementVertical from "./ForecastElementHorizontal";
+import ForecastElementHorizontal from "./ForecastElementHorizontal";
+import ForecastElementVertical from "./ForecastElementVertical";
 import ListElement from "../../ui/ListElement";
 
-const ForecastElement = ({ data, type }) => {
+const ForecastElement = ({ data, elementType }) => {
 	return (
-		<ListElement type={type}>
-			{type === "horizontal" ? <ForecastElementHorizontal data={data} /> : <ForecastElementVertical data={data} />}
+		<ListElement type={elementType}>
+			{elementType === "horizontal" ? (
+				<ForecastElementHorizontal data={data} />
+			) : (
+				<ForecastElementVertical data={data} />
+			)}
 		</ListElement>
 	);
 };
 
 ForecastElement.propTypes = {
 	data: PropTypes.object.isRequired,
-	type: PropTypes.string,
+	elementType: PropTypes.string,
 };
 
 export default ForecastElement;

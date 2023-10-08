@@ -16,6 +16,7 @@ const Temperature = styled.span`
 
 const ForecastElementVertical = ({ data }) => {
 	const { time, condition, temp } = data;
+
 	return (
 		<>
 			<Time>{time}</Time>
