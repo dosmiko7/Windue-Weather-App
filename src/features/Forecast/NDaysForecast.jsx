@@ -14,9 +14,9 @@ const FORECAST = [
 	{ day: "Sun", condition: "Storm", sth: "37/21" },
 ];
 
-const NDaysForecast = ({ daysCount }) => {
+const NDaysForecast = ({ daysCount, variant }) => {
 	return (
-		<Container>
+		<Container variant={variant}>
 			<ContainerName>{daysCount}-Day Forecast</ContainerName>
 			<ForecastList
 				forecast={FORECAST.slice(0, daysCount)}
@@ -28,6 +28,7 @@ const NDaysForecast = ({ daysCount }) => {
 
 NDaysForecast.propTypes = {
 	daysCount: PropTypes.number.isRequired,
+	variant: PropTypes.string,
 };
 
 export default NDaysForecast;

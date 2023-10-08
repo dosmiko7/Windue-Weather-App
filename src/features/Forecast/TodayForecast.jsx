@@ -18,9 +18,9 @@ const FORECAST = [
 	{ time: "9:00 PM", condition: "cloudy", temp: "30" },
 ];
 
-const TodayForecast = ({ hoursCount }) => {
+const TodayForecast = ({ hoursCount, variant }) => {
 	return (
-		<StyledTodayForecast>
+		<StyledTodayForecast variant={variant}>
 			<ContainerName>Today&apos;s Forecast</ContainerName>
 			<ForecastList
 				forecast={FORECAST.slice(0, hoursCount)}
@@ -32,6 +32,7 @@ const TodayForecast = ({ hoursCount }) => {
 
 TodayForecast.propTypes = {
 	hoursCount: PropTypes.number.isRequired,
+	variant: PropTypes.string,
 };
 
 export default TodayForecast;

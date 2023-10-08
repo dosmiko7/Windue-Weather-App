@@ -29,6 +29,7 @@ const List = styled.ul`
 		props.type === "vertical" &&
 		css`
 			flex-direction: column;
+			gap: 1.2rem;
 
 			& > *:not(:last-child)::after {
 				content: "";

@@ -20,8 +20,14 @@ const Cities = () => {
 			<Sidebar variant="nonColor">
 				<List type="vertical">
 					<BasicInfo />
-					<TodayForecast hoursCount={3} />
-					<NDaysForecast daysCount={3} />
+					<TodayForecast
+						hoursCount={3}
+						variant="nonColor"
+					/>
+					<NDaysForecast
+						daysCount={3}
+						variant="nonColor"
+					/>
 				</List>
 			</Sidebar>
 		</StyledCities>
