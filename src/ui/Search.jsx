@@ -8,6 +8,7 @@ const SearchBox = styled(Container)`
 	align-items: center;
 	padding: 0.8rem 1rem;
 	width: 65%;
+	margin-bottom: 1.2rem;
 `;
 
 const Search = () => {

@@ -1,4 +1,6 @@
 import { styled } from "styled-components";
+import PropTypes from "prop-types";
+
 import Container, { ContainerName } from "../../ui/Container";
 import ForecastList from "./ForecastList";
 
@@ -16,16 +18,20 @@ const FORECAST = [
 	{ time: "9:00 PM", condition: "cloudy", temp: "30" },
 ];
 
-const TodayForecast = () => {
+const TodayForecast = ({ hoursCount }) => {
 	return (
 		<StyledTodayForecast>
 			<ContainerName>Today&apos;s Forecast</ContainerName>
 			<ForecastList
-				forecast={FORECAST}
+				forecast={FORECAST.slice({ hoursCount })}
 				type="horizontal"
 			/>
 		</StyledTodayForecast>
 	);
+};
+
+TodayForecast.propTypes = {
+	hoursCount: PropTypes.number.isRequired,
 };
 
 export default TodayForecast;

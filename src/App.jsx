@@ -5,6 +5,7 @@ import { GlobalStyles } from "./styles/GlobalStyles";
 import AppLayout from "./ui/AppLayout";
 import Starter from "./windows/Starter";
 import Weather from "./windows/Weather";
+import Cities from "./windows/Cities";
 
 const App = () => {
 	return (
@@ -20,6 +21,10 @@ const App = () => {
 						<Route
 							path="weather"
 							element={<Weather />}
+						/>
+						<Route
+							path="cities"
+							element={<Cities />}
 						/>
 					</Route>
 				</Routes>

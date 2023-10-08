@@ -25,7 +25,7 @@ const List = styled.ul`
 `;
 
 List.defaultProps = {
-	type: "horizontal",
+	type: "vertical",
 };
 
 export default List;

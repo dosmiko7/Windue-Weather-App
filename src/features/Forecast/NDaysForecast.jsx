@@ -1,8 +1,10 @@
 import { styled } from "styled-components";
+import PropTypes from "prop-types";
+
 import Container, { ContainerName } from "../../ui/Container";
 import ForecastList from "./ForecastList";
 
-const StyledSevenDayForecast = styled(Container)``;
+const StyledNDaysForecast = styled(Container)``;
 
 // TODO: Change into data from API
 const FORECAST = [
@@ -15,16 +17,20 @@ const FORECAST = [
 	{ day: "Sun", condition: "Storm", sth: "37/21" },
 ];
 
-const SevenDayForecast = () => {
+const NDaysForecast = ({ daysCount }) => {
 	return (
-		<StyledSevenDayForecast>
-			<ContainerName>7-Day Forecast</ContainerName>
+		<StyledNDaysForecast>
+			<ContainerName>{daysCount}-Day Forecast</ContainerName>
 			<ForecastList
-				forecast={FORECAST}
+				forecast={FORECAST.slice({ daysCount })}
 				type="vertical"
 			/>
-		</StyledSevenDayForecast>
+		</StyledNDaysForecast>
 	);
 };
 
-export default SevenDayForecast;
+NDaysForecast.propTypes = {
+	daysCount: PropTypes.number.isRequired,
+};
+
+export default NDaysForecast;

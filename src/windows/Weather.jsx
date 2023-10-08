@@ -3,7 +3,7 @@ import { styled } from "styled-components";
 import BasicInfo from "../features/BasicInfo";
 import TodayForecast from "../features/Forecast/TodayForecast";
 import AirCondition from "../features/Air/AirConditions";
-import SevenDayForecast from "../features/Forecast/SevenDayForecast";
+import NDaysForecast from "../features/Forecast/NDaysForecast";
 
 const StyledWeather = styled.div`
 	display: grid;
@@ -22,10 +22,10 @@ const Weather = () => {
 		<StyledWeather>
 			<Box>
 				<BasicInfo />
-				<TodayForecast />
+				<TodayForecast hoursCount={6} />
 				<AirCondition />
 			</Box>
-			<SevenDayForecast />
+			<NDaysForecast daysCount={7} />
 		</StyledWeather>
 	);
 };
