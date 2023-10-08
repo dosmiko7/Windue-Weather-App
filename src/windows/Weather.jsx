@@ -9,6 +9,7 @@ import Sidebar from "../ui/Sidebar";
 const StyledWeather = styled.div`
 	display: grid;
 	grid-template-columns: 6fr 3fr;
+	height: 100%;
 `;
 
 const Box = styled.div`

@@ -11,7 +11,7 @@ const Container = styled.div`
 	color: var(--font-color-1);
 	font-size: 2rem;
 	padding: 2rem;
-	max-height: 100%;
+	height: 100%;
 `;
 
 export default Container;

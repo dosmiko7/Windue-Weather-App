@@ -10,13 +10,14 @@ import Sidebar from "../ui/Sidebar";
 const StyledCities = styled.div`
 	display: grid;
 	grid-template-columns: 6fr 3fr;
+	height: 100%;
 `;
 
 const Cities = () => {
 	return (
 		<StyledCities>
 			<LatestSearches />
-			<Sidebar>
+			<Sidebar variant="nonColor">
 				<List type="vertical">
 					<BasicInfo />
 					<TodayForecast hoursCount={3} />
