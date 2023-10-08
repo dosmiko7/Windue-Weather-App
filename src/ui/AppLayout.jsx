@@ -3,18 +3,12 @@ import { Outlet } from "react-router-dom";
 
 import Menu from "./Menu";
 import Search from "./Search";
+import Window from "./Window";
 
-const StyledAppLayout = styled.div`
+const StyledAppLayout = styled(Window)`
 	display: grid;
 	grid-template-columns: 1fr 11fr;
-	padding: 2.2rem;
-	background-color: var(--background-app-1);
-	width: 160rem;
-	height: 80rem;
-	border-radius: 20px;
 	gap: 2.2rem;
-
-	margin: 30px auto;
 `;
 
 const Main = styled.div`

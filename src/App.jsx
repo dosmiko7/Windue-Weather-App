@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { GlobalStyles } from "./styles/GlobalStyles";
 
 import AppLayout from "./ui/AppLayout";
+import Starter from "./windows/Starter";
 import Weather from "./windows/Weather";
 
 const App = () => {
@@ -11,9 +12,13 @@ const App = () => {
 			<GlobalStyles />
 			<BrowserRouter>
 				<Routes>
+					<Route
+						path="/"
+						element={<Starter />}
+					/>
 					<Route element={<AppLayout />}>
 						<Route
-							path="/"
+							path="weather"
 							element={<Weather />}
 						/>
 					</Route>
