@@ -9,6 +9,7 @@ const types = {
 		font-weight: var(--font-weight-500);
 		gap: 0.8rem;
 		padding: 0.6rem;
+		width: 6.2rem;
 
 		&:hover {
 			color: var(--font-color-2);

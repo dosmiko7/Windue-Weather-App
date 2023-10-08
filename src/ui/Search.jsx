@@ -7,7 +7,6 @@ const SearchBox = styled(Container)`
 	display: flex;
 	align-items: center;
 	padding: 0.8rem 1rem;
-	width: 65%;
 	margin-bottom: 1.2rem;
 `;
 

@@ -1,6 +1,7 @@
 import { styled } from "styled-components";
 import { FaCloudSunRain, FaList, FaMap, FaScrewdriverWrench } from "react-icons/fa6";
-import Button from "./Button";
+
+import MenuLink from "./MenuLink";
 
 const StyledMainNav = styled.ul`
 	display: flex;
@@ -8,30 +9,29 @@ const StyledMainNav = styled.ul`
 	gap: 3.4rem;
 `;
 
-const OptionName = styled.span`
-	font-size: 1.2rem;
-	font-weight: var(--font-weight-700);
-`;
-
 const MainNav = () => {
 	return (
 		<StyledMainNav>
-			<Button>
-				<FaCloudSunRain />
-				<OptionName>Weather</OptionName>
-			</Button>
-			<Button>
-				<FaList />
-				<OptionName>Cities</OptionName>
-			</Button>
-			<Button>
-				<FaMap />
-				<OptionName>Map</OptionName>
-			</Button>
-			<Button>
-				<FaScrewdriverWrench />
-				<OptionName>Settings</OptionName>
-			</Button>
+			<MenuLink
+				icon={<FaCloudSunRain />}
+				name="Weather"
+				address="weather"
+			/>
+			<MenuLink
+				icon={<FaList />}
+				name="Cities"
+				address="cities"
+			/>
+			<MenuLink
+				icon={<FaMap />}
+				name="Map"
+				address="map"
+			/>
+			<MenuLink
+				icon={<FaScrewdriverWrench />}
+				name="Settings"
+				address="settings"
+			/>
 		</StyledMainNav>
 	);
 };
