@@ -1,33 +1,13 @@
-import { styled, css } from "styled-components";
+import { styled } from "styled-components";
 import PropTypes from "prop-types";
 
 import ForecastElement from "./ForecastElement";
+import List from "../../ui/List";
 
-const StyledForecastList = styled.ul`
-	display: flex;
+const StyledForecastList = styled(List)`
 	height: 100%;
 	padding: 1.6rem 0;
 	font-size: 1.6rem;
-
-	${(props) =>
-		props.type === "horizontal" &&
-		css`
-			flex-direction: row;
-
-			li:not(:last-child) {
-				border-right: 2px solid var(--misc-color-1);
-			}
-		`}
-
-	${(props) =>
-		props.type === "vertical" &&
-		css`
-			flex-direction: column;
-
-			li:not(:last-child) {
-				border-bottom: 2px solid var(--misc-color-1);
-			}
-		`}
 `;
 
 // TODO: change key
@@ -48,10 +28,6 @@ const ForecastList = ({ forecast, type }) => {
 ForecastList.propTypes = {
 	forecast: PropTypes.array.isRequired,
 	type: PropTypes.string,
-};
-
-StyledForecastList.defaultProps = {
-	type: "horizontal",
 };
 
 export default ForecastList;
