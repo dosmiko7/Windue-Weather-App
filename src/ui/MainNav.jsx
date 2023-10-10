@@ -1,5 +1,5 @@
 import { styled } from "styled-components";
-import { FaCloudSunRain, FaList, FaMap, FaScrewdriverWrench } from "react-icons/fa6";
+import { FaCloudSunRain, FaList, FaMap } from "react-icons/fa6";
 
 import MenuLink from "./MenuLink";
 
@@ -26,11 +26,6 @@ const MainNav = () => {
 				icon={<FaMap />}
 				name="Geolocation"
 				address="geolocation"
-			/>
-			<MenuLink
-				icon={<FaScrewdriverWrench />}
-				name="Settings"
-				address="settings"
 			/>
 		</StyledMainNav>
 	);
