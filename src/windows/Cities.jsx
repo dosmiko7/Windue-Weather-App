@@ -7,21 +7,17 @@ import NDaysForecast from "../features/Forecast/NDaysForecast";
 import Suggestions from "../features/Suggestions/Suggestions";
 import List from "../ui/List";
 import Sidebar from "../ui/Sidebar";
-
-const StyledCities = styled.div`
-	display: grid;
-	grid-template-columns: 6fr 3fr;
-	height: 100%;
-`;
+import OutletLayout from "../ui/OutletLayout";
 
 const Box = styled.div`
 	display: grid;
 	grid-template-rows: repeat(2, 1fr);
+	row-gap: 1.2rem;
 `;
 
 const Cities = () => {
 	return (
-		<StyledCities>
+		<OutletLayout>
 			<Box>
 				<LatestSearches />
 				<Suggestions />
@@ -40,7 +36,7 @@ const Cities = () => {
 					/>
 				</List>
 			</Sidebar>
-		</StyledCities>
+		</OutletLayout>
 	);
 };
 

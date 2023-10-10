@@ -5,16 +5,24 @@ import ListElement from "../../ui/ListElement";
 import ForecastCondition from "../Forecast/ForecastCondition";
 
 const StyledSearchesElement = styled(ListElement)`
-	background-color: var(--background-color-2);
+	background-color: var(--background-color-1);
 	border-radius: 20px;
 `;
 
-const Box = styled.div``;
+const Box = styled.div`
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	padding-left: 2.6rem;
+`;
 const CityName = styled.h3``;
-const Time = styled.h4``;
+const Time = styled.span`
+	font-size: 1.6rem;
+`;
 
 const Temperature = styled.span`
 	margin-left: auto;
+	font-size: 3.2rem;
 `;
 
 const SearchesElement = ({ search }) => {
@@ -27,7 +35,7 @@ const SearchesElement = ({ search }) => {
 				<CityName>{city}</CityName>
 				<Time>{time}</Time>
 			</Box>
-			<Temperature>{temp}</Temperature>
+			<Temperature>{temp}&#8451;</Temperature>
 		</StyledSearchesElement>
 	);
 };

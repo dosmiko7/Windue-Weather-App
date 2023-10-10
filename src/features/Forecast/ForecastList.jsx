@@ -6,7 +6,7 @@ import List from "../../ui/List";
 
 const StyledForecastList = styled(List)`
 	height: 100%;
-	padding: 1.6rem 0;
+	padding-bottom: 1.6rem;
 	font-size: 1.6rem;
 `;
 

@@ -4,6 +4,7 @@ import Container from "../ui/Container";
 const StyledBasicInfo = styled(Container)`
 	background-color: inherit;
 	display: flex;
+	padding: 1.6rem;
 `;
 
 const InfoContainer = styled.div`

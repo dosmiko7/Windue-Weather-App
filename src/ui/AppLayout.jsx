@@ -15,7 +15,6 @@ const Main = styled.div`
 	display: grid;
 	grid-template-rows: 0.8fr 12fr;
 	grid-template-columns: 6fr 3fr;
-	row-gap: 1.2rem;
 `;
 
 const PositionedSearch = styled(Search)`

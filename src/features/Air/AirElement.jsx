@@ -11,7 +11,7 @@ const SymbolContainer = styled.div``;
 const Info = styled.div`
 	display: flex;
 	flex-direction: column;
-	justify-content: space-between;
+	gap: 0.6rem;
 	padding-bottom: 0.8rem;
 `;
 

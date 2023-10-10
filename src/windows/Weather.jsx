@@ -5,12 +5,7 @@ import TodayForecast from "../features/Forecast/TodayForecast";
 import AirCondition from "../features/Air/AirConditions";
 import NDaysForecast from "../features/Forecast/NDaysForecast";
 import Sidebar from "../ui/Sidebar";
-
-const StyledWeather = styled.div`
-	display: grid;
-	grid-template-columns: 6fr 3fr;
-	height: 100%;
-`;
+import OutletLayout from "../ui/OutletLayout";
 
 const Box = styled.div`
 	display: grid;
@@ -20,7 +15,7 @@ const Box = styled.div`
 
 const Weather = () => {
 	return (
-		<StyledWeather>
+		<OutletLayout>
 			<Box>
 				<BasicInfo />
 				<TodayForecast hoursCount={6} />
@@ -29,7 +24,7 @@ const Weather = () => {
 			<Sidebar>
 				<NDaysForecast daysCount={7} />
 			</Sidebar>
-		</StyledWeather>
+		</OutletLayout>
 	);
 };
 

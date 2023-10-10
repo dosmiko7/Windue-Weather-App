@@ -7,7 +7,7 @@ const orientations = {
 
 	horizontal: css`
 		flex-direction: row;
-		padding: 1.6rem;
+		padding: 1.6rem 2.4rem;
 	`,
 };
 
