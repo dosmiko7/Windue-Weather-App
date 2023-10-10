@@ -23,7 +23,18 @@ export const GlobalStyles = createGlobalStyle`
   }
   
   &.light-theme {
-    --background-app-1: #d1d1d1;
+      --background-app-1: #775B46;
+
+      --background-color-1: #AD8B73;
+      --background-color-2: #CEAB93;
+      --background-color-3: #E3CAA5;
+      --background-color-4: #D5AE00;
+      --background-color-5: #8C7200;
+
+      --font-color-1: #FFFBE9;
+      --font-color-2: #FFF7D5;
+
+      --misc-color-1: #A9866D;
   }
   
 }
@@ -52,7 +63,6 @@ ul {
 
 input {
   font: inherit;
-  color: inherit;
   border: none;
   background-color: transparent;
 }

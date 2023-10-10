@@ -2,12 +2,12 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import { GlobalStyles } from "./styles/GlobalStyles";
 
+import DarkThemeProvider from "./context/DarkThemeContext";
 import AppLayout from "./ui/AppLayout";
 import Starter from "./windows/Starter";
 import Weather from "./windows/Weather";
 import Cities from "./windows/Cities";
 import Geolocation from "./windows/Geolocation";
-import DarkThemeProvider from "./context/DarkThemeContext";
 
 const App = () => {
 	return (
