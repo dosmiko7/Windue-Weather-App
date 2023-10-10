@@ -24,7 +24,7 @@ const TodayForecast = ({ hoursCount, variant }) => {
 			<ContainerName>Today&apos;s Forecast</ContainerName>
 			<ForecastList
 				forecast={FORECAST.slice(0, hoursCount)}
-				type="horizontal"
+				orientation="horizontal"
 			/>
 		</StyledTodayForecast>
 	);

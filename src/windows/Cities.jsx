@@ -28,7 +28,7 @@ const Cities = () => {
 			</Box>
 
 			<Sidebar variant="nonColor">
-				<List type="vertical">
+				<List orientation="vertical">
 					<BasicInfo />
 					<TodayForecast
 						hoursCount={3}

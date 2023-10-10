@@ -11,11 +11,11 @@ const StyledForecastList = styled(List)`
 `;
 
 // TODO: change key
-const ForecastList = ({ forecast, type }) => {
-	const elementType = type === "vertical" ? "horizontal" : "vertical";
+const ForecastList = ({ forecast, orientation }) => {
+	const elementType = orientation === "vertical" ? "horizontal" : "vertical";
 
 	return (
-		<StyledForecastList type={type}>
+		<StyledForecastList orientation={orientation}>
 			{forecast.map((item) => (
 				<ForecastElement
 					key={Math.random()}
@@ -29,7 +29,7 @@ const ForecastList = ({ forecast, type }) => {
 
 ForecastList.propTypes = {
 	forecast: PropTypes.array.isRequired,
-	type: PropTypes.string,
+	orientation: PropTypes.string,
 };
 
 export default ForecastList;
