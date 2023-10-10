@@ -3,10 +3,10 @@ import PropTypes from "prop-types";
 import List from "../../ui/List";
 import SearchesElement from "./SearchesElement";
 
-const LatestSearchesList = ({ searches }) => {
+const LatestSearchesList = ({ searches, orientation }) => {
 	return (
 		<List
-			orientation="vertical"
+			orientation={orientation}
 			border="nonBorder"
 		>
 			{searches.map((search) => (
@@ -21,6 +21,7 @@ const LatestSearchesList = ({ searches }) => {
 
 LatestSearchesList.propTypes = {
 	searches: PropTypes.array.isRequired,
+	orientation: PropTypes.string,
 };
 
 export default LatestSearchesList;

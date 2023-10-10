@@ -24,8 +24,8 @@ const MainNav = () => {
 			/>
 			<MenuLink
 				icon={<FaMap />}
-				name="Map"
-				address="map"
+				name="Geolocation"
+				address="geolocation"
 			/>
 			<MenuLink
 				icon={<FaScrewdriverWrench />}

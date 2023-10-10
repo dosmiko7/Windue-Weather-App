@@ -11,7 +11,10 @@ const Suggestions = () => {
 	return (
 		<Container variant="nonColor">
 			<ContainerName>Suggestions</ContainerName>
-			<SuggestionsList suggestions={SUGGESTIONS} />
+			<SuggestionsList
+				suggestions={SUGGESTIONS}
+				orientation="horizontal"
+			/>
 		</Container>
 	);
 };

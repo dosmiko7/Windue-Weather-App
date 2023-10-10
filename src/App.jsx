@@ -6,6 +6,7 @@ import AppLayout from "./ui/AppLayout";
 import Starter from "./windows/Starter";
 import Weather from "./windows/Weather";
 import Cities from "./windows/Cities";
+import Geolocation from "./windows/Geolocation";
 
 const App = () => {
 	return (
@@ -25,6 +26,10 @@ const App = () => {
 						<Route
 							path="cities"
 							element={<Cities />}
+						/>
+						<Route
+							path="Geolocation"
+							element={<Geolocation />}
 						/>
 					</Route>
 				</Routes>

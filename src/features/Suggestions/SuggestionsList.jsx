@@ -9,10 +9,10 @@ const StyledSuggestionList = styled(List)`
 	gap: 1.2rem;
 `;
 
-const SuggestionsList = ({ suggestions }) => {
+const SuggestionsList = ({ suggestions, orientation }) => {
 	return (
 		<StyledSuggestionList
-			orientation="horizontal"
+			orientation={orientation}
 			border="nonBorder"
 		>
 			{suggestions.map((suggestion) => (
@@ -27,6 +27,7 @@ const SuggestionsList = ({ suggestions }) => {
 
 SuggestionsList.propTypes = {
 	suggestions: PropTypes.array.isRequired,
+	orientation: PropTypes.string,
 };
 
 export default SuggestionsList;

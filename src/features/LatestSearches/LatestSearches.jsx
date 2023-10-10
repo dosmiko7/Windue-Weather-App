@@ -12,7 +12,10 @@ const LatestSearches = () => {
 	return (
 		<Container variant="nonColor">
 			<ContainerName>Latest Searches</ContainerName>
-			<LatestSearchesList searches={LATEST_SEARCHES} />
+			<LatestSearchesList
+				searches={LATEST_SEARCHES}
+				orientation="vertical"
+			/>
 		</Container>
 	);
 };
