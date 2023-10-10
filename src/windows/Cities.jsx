@@ -1,7 +1,7 @@
 import { styled } from "styled-components";
 
 import LatestSearches from "../features/LatestSearches/LatestSearches";
-import BasicInfo from "../features/BasicInfo";
+import ForecastBasicInfo from "../features/Forecast/ForecastBasicInfo";
 import TodayForecast from "../features/Forecast/TodayForecast";
 import NDaysForecast from "../features/Forecast/NDaysForecast";
 import Suggestions from "../features/Suggestions/Suggestions";
@@ -25,7 +25,7 @@ const Cities = () => {
 
 			<Sidebar variant="nonColor">
 				<List orientation="vertical">
-					<BasicInfo />
+					<ForecastBasicInfo />
 					<TodayForecast
 						hoursCount={3}
 						variant="nonColor"

@@ -1,5 +1,5 @@
 import { styled } from "styled-components";
-import Container from "../ui/Container";
+import Container from "../../ui/Container";
 
 const StyledBasicInfo = styled(Container)`
 	background-color: inherit;
@@ -40,7 +40,7 @@ const ImageContainer = styled.div`
 `;
 
 // TODO: Change dump data to API's data
-const BasicInfo = () => {
+const ForecastBasicInfo = () => {
 	const cityName = "Madrid";
 	const rainProb = 0;
 	const temp = 31;
@@ -57,4 +57,4 @@ const BasicInfo = () => {
 	);
 };
 
-export default BasicInfo;
+export default ForecastBasicInfo;

@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
 
-import BasicInfo from "../features/BasicInfo";
+import ForecastBasicInfo from "../features/Forecast/ForecastBasicInfo";
 import TodayForecast from "../features/Forecast/TodayForecast";
 import AirCondition from "../features/Air/AirConditions";
 import NDaysForecast from "../features/Forecast/NDaysForecast";
@@ -17,7 +17,7 @@ const Weather = () => {
 	return (
 		<OutletLayout>
 			<Box>
-				<BasicInfo />
+				<ForecastBasicInfo />
 				<TodayForecast hoursCount={6} />
 				<AirCondition />
 			</Box>
