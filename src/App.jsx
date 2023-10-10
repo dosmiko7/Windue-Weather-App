@@ -7,10 +7,11 @@ import Starter from "./windows/Starter";
 import Weather from "./windows/Weather";
 import Cities from "./windows/Cities";
 import Geolocation from "./windows/Geolocation";
+import DarkThemeProvider from "./context/DarkThemeContext";
 
 const App = () => {
 	return (
-		<>
+		<DarkThemeProvider>
 			<GlobalStyles />
 			<BrowserRouter>
 				<Routes>
@@ -34,7 +35,7 @@ const App = () => {
 					</Route>
 				</Routes>
 			</BrowserRouter>
-		</>
+		</DarkThemeProvider>
 	);
 };
 
