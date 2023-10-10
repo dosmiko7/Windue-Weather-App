@@ -16,8 +16,8 @@ const Menu = () => {
 	return (
 		<StyledMenu>
 			<Logo />
-			<MainNav />
 			<DarkThemeToggle />
+			<MainNav />
 		</StyledMenu>
 	);
 };

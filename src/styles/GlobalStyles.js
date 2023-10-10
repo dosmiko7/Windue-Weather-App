@@ -23,7 +23,7 @@ export const GlobalStyles = createGlobalStyle`
   }
   
   &.light-theme {
-
+    --background-app-1: #d1d1d1;
   }
   
 }
