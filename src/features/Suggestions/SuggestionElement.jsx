@@ -8,9 +8,13 @@ const StyledSuggestionElement = styled(ListElement)`
 	background-color: var(--background-color-1);
 	border-radius: 20px;
 	padding: 2.4rem 4.8rem;
+	gap: 1.2rem;
 	flex: 0;
 `;
-const CityName = styled.h3``;
+const CityName = styled.h3`
+	color: var(--font-color-2);
+`;
+
 const Temperature = styled.span`
 	font-weight: var(--font-weight-500);
 	font-size: 2.8rem;

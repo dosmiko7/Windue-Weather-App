@@ -10,9 +10,9 @@ import Sidebar from "../ui/Sidebar";
 import OutletLayout from "../ui/OutletLayout";
 
 const Box = styled.div`
-	display: grid;
-	grid-template-rows: repeat(2, 1fr);
-	row-gap: 1.2rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 `;
 
 const Cities = () => {

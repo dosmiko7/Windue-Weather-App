@@ -6,6 +6,8 @@ import ForecastCondition from "../Forecast/ForecastCondition";
 
 const StyledSearchesElement = styled(ListElement)`
 	background-color: var(--background-color-1);
+	padding-top: 2.8rem;
+	padding-bottom: 2.8rem;
 	border-radius: 20px;
 `;
 
@@ -15,7 +17,11 @@ const Box = styled.div`
 	justify-content: space-between;
 	padding-left: 2.6rem;
 `;
-const CityName = styled.h3``;
+
+const CityName = styled.h3`
+	color: var(--font-color-2);
+`;
+
 const Time = styled.span`
 	font-size: 1.6rem;
 `;
@@ -23,6 +29,7 @@ const Time = styled.span`
 const Temperature = styled.span`
 	margin-left: auto;
 	font-size: 3.2rem;
+	color: var(--font-color-2);
 `;
 
 const SearchesElement = ({ search }) => {

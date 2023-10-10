@@ -33,7 +33,7 @@ const orientations = {
 
 const List = styled.ul`
 	display: flex;
-	height: 100%;
+	max-height: 100%;
 	width: 100%;
 
 	& > * {
