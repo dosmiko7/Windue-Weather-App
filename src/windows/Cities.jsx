@@ -4,6 +4,7 @@ import LatestSearches from "../features/LatestSearches/LatestSearches";
 import BasicInfo from "../features/BasicInfo";
 import TodayForecast from "../features/Forecast/TodayForecast";
 import NDaysForecast from "../features/Forecast/NDaysForecast";
+import Suggestions from "../features/Suggestions/Suggestions";
 import List from "../ui/List";
 import Sidebar from "../ui/Sidebar";
 
@@ -13,10 +14,19 @@ const StyledCities = styled.div`
 	height: 100%;
 `;
 
+const Box = styled.div`
+	display: grid;
+	grid-template-rows: repeat(2, 1fr);
+`;
+
 const Cities = () => {
 	return (
 		<StyledCities>
-			<LatestSearches />
+			<Box>
+				<LatestSearches />
+				<Suggestions />
+			</Box>
+
 			<Sidebar variant="nonColor">
 				<List type="vertical">
 					<BasicInfo />

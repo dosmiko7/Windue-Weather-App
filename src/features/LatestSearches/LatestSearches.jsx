@@ -1,5 +1,3 @@
-import { styled } from "styled-components";
-
 import Container, { ContainerName } from "../../ui/Container";
 import LatestSearchesList from "./LatestSearchesList";
 
@@ -10,14 +8,12 @@ const LATEST_SEARCHES = [
 	{ city: "Malacky", condition: "windy", time: "11:23", temp: "22" },
 ];
 
-const StyledLatestSearches = styled(Container)``;
-
 const LatestSearches = () => {
 	return (
-		<StyledLatestSearches>
+		<Container variant="nonColor">
 			<ContainerName>Latest Searches</ContainerName>
 			<LatestSearchesList searches={LATEST_SEARCHES} />
-		</StyledLatestSearches>
+		</Container>
 	);
 };
 
