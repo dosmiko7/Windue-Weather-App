@@ -6,7 +6,7 @@ import ListElement from "../../ui/ListElement";
 
 const ForecastElement = ({ data, elementType }) => {
 	return (
-		<ListElement type={elementType}>
+		<ListElement orientation={elementType}>
 			{elementType === "horizontal" ? (
 				<ForecastElementHorizontal data={data} />
 			) : (

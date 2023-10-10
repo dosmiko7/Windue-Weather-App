@@ -12,7 +12,7 @@ const StyledForecastList = styled(List)`
 
 // TODO: change key
 const ForecastList = ({ forecast, orientation }) => {
-	const elementType = orientation === "vertical" ? "horizontal" : "vertical";
+	const elementOrientation = orientation === "vertical" ? "horizontal" : "vertical";
 
 	return (
 		<StyledForecastList orientation={orientation}>
@@ -20,7 +20,7 @@ const ForecastList = ({ forecast, orientation }) => {
 				<ForecastElement
 					key={Math.random()}
 					data={item}
-					elementType={elementType}
+					elementType={elementOrientation}
 				/>
 			))}
 		</StyledForecastList>

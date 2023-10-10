@@ -21,7 +21,7 @@ const SearchesElement = ({ search }) => {
 	const { city, condition, time, temp } = search;
 
 	return (
-		<StyledSearchesElement type="horizontal">
+		<StyledSearchesElement orientation="horizontal">
 			<ForecastCondition condition={condition} />
 			<Box>
 				<CityName>{city}</CityName>

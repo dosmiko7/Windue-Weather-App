@@ -5,7 +5,10 @@ import SearchesElement from "./SearchesElement";
 
 const LatestSearchesList = ({ searches }) => {
 	return (
-		<List orientation="vertical">
+		<List
+			orientation="vertical"
+			border="nonBorder"
+		>
 			{searches.map((search) => (
 				<SearchesElement
 					key={Math.random()}

@@ -41,10 +41,19 @@ const List = styled.ul`
 	}
 
 	${(props) => orientations[props.orientation]};
+
+	${(props) =>
+		props.border === "nonBorder" &&
+		css`
+			& > *:not(:last-child)::after {
+				content: none;
+			}
+		`}
 `;
 
 List.defaultProps = {
 	orientation: "vertical",
+	border: "withBorder",
 };
 
 export default List;
