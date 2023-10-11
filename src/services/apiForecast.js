@@ -6,7 +6,7 @@ const getForecast = async ({ city, days }) => {
 
 	try {
 		const response = fetch(
-			`http://api.weatherapi.com/v1/forecast.json?key${weatherAPIKey}&q=${city}&days=${correctDays}&aqi=no&alerts=no`
+			`http://api.weatherapi.com/v1/forecast.json?key=${weatherAPIKey}&q=${city}&days=${correctDays}&aqi=no&alerts=no`
 		);
 		const forecast = await response.json();
 		return forecast;
