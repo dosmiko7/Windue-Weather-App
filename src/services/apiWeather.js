@@ -6,12 +6,11 @@ import getHistory from "./apiHistory";
 const fetchWeatherData = async ({ city, days = 3 }) => {
 	try {
 		const [forecastData, currentData, historyData] = await Promise.all([
-			getForecast(city, days),
-			getCurrent(city),
-			getHistory(city),
+			getForecast({ city, days }),
+			getCurrent({ city }),
+			getHistory({ city }),
 		]);
 
-		// Now you have both forecastData and currentData here.
 		console.log("Forecast Data:", forecastData);
 		console.log("Current Data:", currentData);
 		console.log("History Dara:", historyData);
@@ -24,3 +23,5 @@ fetchWeatherData.propTypes = {
 	city: PropTypes.string.isRequired,
 	days: PropTypes.number,
 };
+
+export default fetchWeatherData;

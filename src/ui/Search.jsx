@@ -6,6 +6,7 @@ import Container from "./Container";
 import Form from "./Form";
 import Input from "./Input";
 import Button from "./Button";
+import fetchWeatherData from "../services/apiWeather";
 
 const SearchBox = styled(Container)`
 	display: flex;
@@ -30,6 +31,7 @@ const Search = () => {
 
 	const handleOnSubmit = (event) => {
 		event.preventDefault();
+		fetchWeatherData({ city: inputValue });
 	};
 
 	return (

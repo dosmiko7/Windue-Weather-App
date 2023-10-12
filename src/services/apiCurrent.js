@@ -3,9 +3,9 @@ import { weatherAPIKey } from "./weatherAPIKey";
 
 const getCurrent = async ({ city }) => {
 	try {
-		const response = fetch(`http://api.weatherapi.com/v1/current.json?key=${weatherAPIKey}&q=${city}&aqi=yes`);
-		const current = await response.json();
-		return current;
+		const response = await fetch(`http://api.weatherapi.com/v1/current.json?key=${weatherAPIKey}&q=${city}&aqi=yes`);
+		const data = await response.json();
+		return data;
 	} catch (error) {
 		console.error("Error while fetching current weather: " + error);
 	}
