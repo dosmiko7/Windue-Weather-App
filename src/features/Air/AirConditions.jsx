@@ -16,7 +16,7 @@ const SeeMore = styled(Button)`
 `;
 
 // TODO: Change to dynamically getting it from API
-const AIR_CONDITION = { tmpFeel: "30", wind: "0.2", rain: "0", UV: "3" };
+const AIR_CONDITION = { tmpFeel: "30", humidity: "80", pressure: "1025", uv: "3" };
 
 const AirCondition = () => {
 	return (

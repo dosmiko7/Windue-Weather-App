@@ -10,13 +10,13 @@ const StyledNDaysForecast = styled(Container)`
 
 // TODO: Change into data from API
 const FORECAST = [
-	{ day: "Today", condition: "Sunny", sth: "36/22" },
-	{ day: "Tue", condition: "Sunny", sth: "37/21" },
-	{ day: "Wed", condition: "Sunny", sth: "37/21" },
-	{ day: "Thu", condition: "Cloudy", sth: "37/21" },
-	{ day: "Fri", condition: "Cloudy", sth: "37/21" },
-	{ day: "Sat", condition: "Rainy", sth: "37/21" },
-	{ day: "Sun", condition: "Storm", sth: "37/21" },
+	{ day: "Today", condition: { text: "Sunny" }, wind: "22" },
+	{ day: "Tue", condition: { text: "Sunny" }, wind: "22" },
+	{ day: "Wed", condition: { text: "Sunny" }, wind: "22" },
+	{ day: "Thu", condition: { text: "Cloudy" }, wind: "22" },
+	{ day: "Fri", condition: { text: "Cloudy" }, wind: "22" },
+	{ day: "Sat", condition: { text: "Rainy" }, wind: "22" },
+	{ day: "Sun", condition: { text: "Storm" }, wind: "22" },
 ];
 
 const NDaysForecast = ({ daysCount, variant }) => {

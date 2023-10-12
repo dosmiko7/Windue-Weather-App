@@ -13,7 +13,7 @@ const StyledAirGrid = styled.div`
 `;
 
 const AirGrid = ({ data }) => {
-	const { tmpFeel, wind, rain, UV } = data;
+	const { tmpFeel, humidity, pressure, uv } = data;
 
 	return (
 		<StyledAirGrid>
@@ -24,18 +24,18 @@ const AirGrid = ({ data }) => {
 			/>
 			<AirElement
 				symbol={<FaWind />}
-				title="Wind"
-				data={wind}
+				title="Humidity"
+				data={humidity}
 			/>
 			<AirElement
 				symbol={<FaDroplet />}
-				title="Chance of rain"
-				data={rain}
+				title="Pressure in MB"
+				data={pressure}
 			/>
 			<AirElement
 				symbol={<FaSun />}
 				title="UV Index"
-				data={UV}
+				data={uv}
 			/>
 		</StyledAirGrid>
 	);

@@ -2,11 +2,12 @@ import { FaSearch } from "react-icons/fa";
 import { styled } from "styled-components";
 import { useState } from "react";
 
+import useWeather from "../hooks/useWeather";
+
 import Container from "./Container";
 import Form from "./Form";
 import Input from "./Input";
 import Button from "./Button";
-import fetchWeatherData from "../services/apiWeather";
 
 const SearchBox = styled(Container)`
 	display: flex;
@@ -28,10 +29,11 @@ const SearchButton = styled(Button)`
 
 const Search = () => {
 	const [inputValue, setInputValue] = useState("");
+	const { updateForecast } = useWeather();
 
 	const handleOnSubmit = (event) => {
 		event.preventDefault();
-		fetchWeatherData({ city: inputValue });
+		updateForecast({ city: inputValue });
 	};
 
 	return (

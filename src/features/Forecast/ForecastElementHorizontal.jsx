@@ -7,18 +7,18 @@ const Day = styled.span`
 	width: 30%;
 `;
 
-const Sth = styled.span`
+const Wind = styled.span`
 	width: 30%;
 	text-align: end;
 `;
 
 const ForecastElementHorizontal = ({ data }) => {
-	const { day, condition, sth } = data;
+	const { day, condition, wind } = data;
 	return (
 		<>
 			<Day>{day}</Day>
 			<ForecastCondition condition={condition} />
-			<Sth>{sth}</Sth>
+			<Wind>{wind}</Wind>
 		</>
 	);
 };
