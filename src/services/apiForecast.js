@@ -1,6 +1,10 @@
 import PropTypes from "prop-types";
 import { weatherAPIKey } from "./weatherAPIKey";
 
+/*
+	Note: The free version of WeatherAPI can not support more than 3 days
+*/
+
 const getForecast = async ({ city, days = 3 }) => {
 	const correctDays = days > 3 ? 3 : days;
 

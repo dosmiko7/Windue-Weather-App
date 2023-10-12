@@ -6,9 +6,9 @@ import { weatherAPIKey } from "./weatherAPIKey";
 const getHistory = async ({ city }) => {
 	const date = new Date();
 
-	let day = date.getDate();
-	let month = date.getMonth() + 1;
-	let year = date.getFullYear();
+	const day = date.getDate();
+	const month = date.getMonth() + 1;
+	const year = date.getFullYear();
 
 	try {
 		const response = await fetch(
