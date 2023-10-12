@@ -33,13 +33,13 @@ const Temperature = styled.span`
 `;
 
 const SearchesElement = ({ search }) => {
-	const { city, condition, time, temp } = search;
+	const { cityName, condition, time, temp } = search;
 
 	return (
 		<StyledSearchesElement orientation="horizontal">
 			<ForecastCondition condition={condition} />
 			<Box>
-				<CityName>{city}</CityName>
+				<CityName>{cityName}</CityName>
 				<Time>{time}</Time>
 			</Box>
 			<Temperature>{temp}&#8451;</Temperature>
