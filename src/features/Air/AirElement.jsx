@@ -25,13 +25,23 @@ const InfoData = styled.span`
 	font-size: 3.2rem;
 `;
 
+const additionalSymbols = {
+	"Real Feel": "℃",
+	Humidity: "%",
+	Pressure: "mb",
+};
+
 const AirElement = ({ symbol, title, data }) => {
+	const additionalSymbol = additionalSymbols[title] || "";
+
 	return (
 		<StyledAirElement>
 			<SymbolContainer>{symbol}</SymbolContainer>
 			<Info>
 				<InfoTitle>{title}</InfoTitle>
-				<InfoData>{data}</InfoData>
+				<InfoData>
+					{data} {additionalSymbol}
+				</InfoData>
 			</Info>
 		</StyledAirElement>
 	);
@@ -40,7 +50,7 @@ const AirElement = ({ symbol, title, data }) => {
 AirElement.propTypes = {
 	symbol: PropTypes.node.isRequired,
 	title: PropTypes.string.isRequired,
-	data: PropTypes.string.isRequired,
+	data: PropTypes.number.isRequired,
 };
 
 export default AirElement;

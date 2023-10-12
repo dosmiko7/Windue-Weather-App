@@ -1,8 +1,6 @@
 import convertDateIntoDayName from "./convertDateIntoDayName";
 
 const formatData = (data) => {
-	console.log(data);
-
 	const current = {
 		cityName: data.location.name,
 		rainProb: data.forecast.forecastday[0].day.daily_chance_of_rain,
@@ -13,7 +11,7 @@ const formatData = (data) => {
 	const hoursToExtract = [6, 9, 12, 15, 18, 21];
 	const todayForecast = [];
 	for (const hour of hoursToExtract) {
-		const hourData = data.forecast.forecastday.hour[hour];
+		const hourData = data.forecast.forecastday[0].hour[hour];
 		todayForecast.push({
 			time: hourData.time.slice(-6),
 			condition: {
@@ -24,9 +22,9 @@ const formatData = (data) => {
 		});
 	}
 
-	const threeDayForecast = [];
+	const nDayForecast = [];
 	data.forecast.forecastday.forEach((day) => {
-		threeDayForecast.push({
+		nDayForecast.push({
 			day: convertDateIntoDayName(day.date),
 			condition: { icon: day.day.condition.icon, text: day.day.condition.text },
 			wind: day.day.avgvis_km,
@@ -40,7 +38,7 @@ const formatData = (data) => {
 		uv: data.current.uv,
 	};
 
-	return { current, todayForecast, threeDayForecast, airCondition };
+	return { current, todayForecast, nDayForecast, airCondition };
 
 	// const todayForecast = [
 	// 	{

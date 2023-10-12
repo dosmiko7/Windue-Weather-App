@@ -1,4 +1,7 @@
 import { styled } from "styled-components";
+import { useContext } from "react";
+import { WeatherContext } from "../../context/WeatherContext";
+
 import Container from "../../ui/Container";
 
 const StyledBasicInfo = styled(Container)`
@@ -39,11 +42,9 @@ const ImageContainer = styled.div`
 	border: 1px solid red;
 `;
 
-// TODO: Change dump data to API's data
 const ForecastBasicInfo = () => {
-	const cityName = "Madrid";
-	const rainProb = 0;
-	const temp = 31;
+	const { forecast } = useContext(WeatherContext);
+	const { cityName, rainProb, temp, condition } = forecast.current;
 
 	return (
 		<StyledBasicInfo>
@@ -52,7 +53,7 @@ const ForecastBasicInfo = () => {
 				<RainInfo>Chance of rain: {rainProb}%</RainInfo>
 				<TemperatureInfo>{temp}&#8451;</TemperatureInfo>
 			</InfoContainer>
-			<ImageContainer></ImageContainer>
+			<ImageContainer>{condition.text}</ImageContainer>
 		</StyledBasicInfo>
 	);
 };

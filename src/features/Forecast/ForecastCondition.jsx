@@ -16,7 +16,7 @@ const ForecastCondition = ({ condition }) => {
 };
 
 ForecastCondition.propTypes = {
-	condition: PropTypes.string.isRequired,
+	condition: PropTypes.object.isRequired,
 };
 
 export default ForecastCondition;
