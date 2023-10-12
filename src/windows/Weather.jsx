@@ -22,7 +22,7 @@ const Weather = () => {
 				<AirCondition />
 			</Box>
 			<Sidebar>
-				<NDaysForecast daysCount={7} />
+				<NDaysForecast daysCount={3} />
 			</Sidebar>
 		</OutletLayout>
 	);
