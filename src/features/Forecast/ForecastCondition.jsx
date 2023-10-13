@@ -9,8 +9,10 @@ const Image = styled.img``;
 const ForecastCondition = ({ condition }) => {
 	return (
 		<ImageContainer>
-			{condition.text}
-			<Image />
+			<Image
+				src={condition.icon}
+				alt={condition.text}
+			/>
 		</ImageContainer>
 	);
 };

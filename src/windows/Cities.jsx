@@ -14,6 +14,7 @@ const Box = styled.div`
 	flex-direction: column;
 	justify-content: space-between;
 `;
+1;
 
 const Cities = () => {
 	return (
@@ -31,7 +32,7 @@ const Cities = () => {
 						variant="nonColor"
 					/>
 					<NDaysForecast
-						daysCount={3}
+						daysCount={2}
 						variant="nonColor"
 					/>
 				</List>

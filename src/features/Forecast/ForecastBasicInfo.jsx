@@ -38,8 +38,11 @@ const ImageContainer = styled.div`
 	align-items: center;
 	width: 50%;
 	max-height: 100%;
+`;
 
-	border: 1px solid red;
+const Image = styled.img`
+	height: 12rem;
+	width: auto;
 `;
 
 const ForecastBasicInfo = () => {
@@ -53,7 +56,12 @@ const ForecastBasicInfo = () => {
 				<RainInfo>Chance of rain: {rainProb}%</RainInfo>
 				<TemperatureInfo>{temp}&#8451;</TemperatureInfo>
 			</InfoContainer>
-			<ImageContainer>{condition.text}</ImageContainer>
+			<ImageContainer>
+				<Image
+					src={condition.icon}
+					alt={condition.text}
+				/>
+			</ImageContainer>
 		</StyledBasicInfo>
 	);
 };

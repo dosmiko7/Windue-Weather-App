@@ -17,7 +17,7 @@ const orientations = {
 
 	vertical: css`
 		flex-direction: column;
-		gap: 1.2rem;
+		row-gap: 0.8rem;
 
 		& > *:not(:last-child)::after {
 			content: "";
