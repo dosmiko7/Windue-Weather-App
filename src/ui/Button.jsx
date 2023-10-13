@@ -2,7 +2,6 @@ import { css, styled } from "styled-components";
 
 const types = {
 	menu: css`
-		display: flex;
 		flex-direction: column;
 		align-items: center;
 		font-size: 2.6rem;
@@ -22,7 +21,6 @@ const types = {
 	`,
 
 	common: css`
-		display: flex;
 		align-items: center;
 		justify-content: center;
 		padding: 0.6rem 1.6rem;
@@ -40,14 +38,33 @@ const types = {
 			transform: translateY(3px);
 		}
 	`,
+
+	close: css`
+		align-items: center;
+		justify-content: center;
+		border-radius: 50%;
+		background-color: var(--background-color-4);
+		padding: 0.6rem;
+		font-size: 1.8rem;
+		font-weight: var(--font-weight-500);
+		color: var(--font-color-2);
+
+		&:hover {
+			color: var(--font-color-2);
+			background-color: var(--background-color-5);
+			& > * {
+				transform: scale(1.2);
+			}
+		}
+	`,
 };
 
 const Button = styled.button`
 	border: none;
 	border-radius: 10px;
 	transition: all 0.3s;
-
-	${(props) => types[props.type]}
+	display: flex;
+	${(props) => types[props.type]};
 `;
 
 Button.defaultProps = {

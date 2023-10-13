@@ -1,10 +1,12 @@
 import { styled } from "styled-components";
+import { useContext } from "react";
+import { WeatherContext } from "../../context/WeatherContext";
 
 import Container, { ContainerName } from "../../ui/Container";
 import AirGrid from "./AirGrid";
 import Button from "../../ui/Button";
-import { useContext } from "react";
-import { WeatherContext } from "../../context/WeatherContext";
+import Modal from "../../ui/Modal";
+import AirDetails from "./AirDetails";
 
 const StyledAirCondition = styled(Container)`
 	position: relative;
@@ -17,18 +19,23 @@ const SeeMore = styled(Button)`
 	top: 20px;
 `;
 
-// TODO: Change to dynamically getting it from API
-// const AIR_CONDITION = { tmpFeel: "30", humidity: "80", pressure: "1025", uv: "3" };
-
 const AirCondition = () => {
 	const { forecast } = useContext(WeatherContext);
 	const airCondition = forecast.airCondition;
+	const details = forecast.current.details;
 
 	return (
 		<StyledAirCondition>
 			<ContainerName>Air Conditions</ContainerName>
 			<AirGrid data={airCondition}></AirGrid>
-			<SeeMore type="common">See more</SeeMore>
+			<Modal>
+				<Modal.Open opens="airDetails">
+					<SeeMore type="common">See more</SeeMore>
+				</Modal.Open>
+				<Modal.Window name="airDetails">
+					<AirDetails details={details} />
+				</Modal.Window>
+			</Modal>
 		</StyledAirCondition>
 	);
 };

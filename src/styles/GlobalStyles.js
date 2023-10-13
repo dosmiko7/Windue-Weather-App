@@ -20,6 +20,7 @@ export const GlobalStyles = createGlobalStyle`
       --font-weight-700: 700;
 
       --misc-color-1: #283549;
+      --backdrop-color-1: rgba(0, 0, 0, 0.04);
   }
   
   &.light-theme {

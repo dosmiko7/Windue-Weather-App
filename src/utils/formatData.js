@@ -1,11 +1,29 @@
 import convertDateIntoDayName from "./convertDateIntoDayName";
 
+/*
+co: 303.8 Carbon Monoxide (μg/m3)
+no2: 18.2 Nitrogen dioxide (μg/m3)
+o3: 35.1  Ozone (μg/m3)
+pm10: 10.4 PM10 (μg/m3)
+pm2_5: 8.5 PM2.5 (μg/m3)
+so2: 15.7 Sulphur dioxide (μg/m3)
+*/
+
 const formatData = (data) => {
+	console.log(data);
 	const current = {
 		cityName: data.location.name,
 		rainProb: data.forecast.forecastday[0].day.daily_chance_of_rain,
 		temp: data.current.temp_c,
 		condition: { icon: data.current.condition.icon, text: data.current.condition.text },
+		details: {
+			carbon: data.current.air_quality.co,
+			nitrogen: data.current.air_quality.no2,
+			ozone: data.current.air_quality.o3,
+			sulphur: data.current.air_quality.so2,
+			pm10: data.current.air_quality.pm10,
+			pm2_5: data.current.air_quality.pm2_5,
+		},
 	};
 
 	const hoursToExtract = [6, 9, 12, 15, 18, 21];
@@ -39,57 +57,6 @@ const formatData = (data) => {
 	};
 
 	return { current, todayForecast, nDayForecast, airCondition };
-
-	// const todayForecast = [
-	// 	{
-	// 		time: data.forecast.forecastday.hour[6].time.slice(-6),
-	// 		condition: {
-	// 			icon: data.forecast.forecastday.hour[6].condition.icon,
-	// 			text: data.forecast.forecastday.hour[6].condition.text,
-	// 		},
-	// 		temp: data.forecast.forecastday.hour[6].temp_c,
-	// 	},
-	// 	{
-	// 		time: data.forecast.forecastday.hour[9].time.slice(-6),
-	// 		condition: {
-	// 			icon: data.forecast.forecastday.hour[9].condition.icon,
-	// 			text: data.forecast.forecastday.hour[9].condition.text,
-	// 		},
-	// 		temp: data.forecast.forecastday.hour[9].temp_c,
-	// 	},
-	// 	{
-	// 		time: data.forecast.forecastday.hour[12].time.slice(-6),
-	// 		condition: {
-	// 			icon: data.forecast.forecastday.hour[12].condition.icon,
-	// 			text: data.forecast.forecastday.hour[12].condition.text,
-	// 		},
-	// 		temp: data.forecast.forecastday.hour[12].temp_c,
-	// 	},
-	// 	{
-	// 		time: data.forecast.forecastday.hour[15].time.slice(-6),
-	// 		condition: {
-	// 			icon: data.forecast.forecastday.hour[15].condition.icon,
-	// 			text: data.forecast.forecastday.hour[15].condition.text,
-	// 		},
-	// 		temp: data.forecast.forecastday.hour[15].temp_c,
-	// 	},
-	// 	{
-	// 		time: data.forecast.forecastday.hour[18].time.slice(-6),
-	// 		condition: {
-	// 			icon: data.forecast.forecastday.hour[18].condition.icon,
-	// 			text: data.forecast.forecastday.hour[18].condition.text,
-	// 		},
-	// 		temp: data.forecast.forecastday.hour[18].temp_c,
-	// 	},
-	// 	{
-	// 		time: data.forecast.forecastday.hour[21].time.slice(-6),
-	// 		condition: {
-	// 			icon: data.forecast.forecastday.hour[21].condition.icon,
-	// 			text: data.forecast.forecastday.hour[21].condition.text,
-	// 		},
-	// 		temp: data.forecast.forecastday.hour[21].temp_c,
-	// 	},
-	// ];
 };
 
 export default formatData;
