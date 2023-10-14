@@ -14,6 +14,8 @@ const SearchBox = styled(Container)`
 	align-items: center;
 	padding: 0.4rem 1rem;
 	margin-bottom: 1.2rem;
+	border: 1px solid;
+	border-color: ${(props) => (props.error === "true" ? "red" : "transparent")};
 `;
 
 const SearchButton = styled(Button)`
@@ -29,21 +31,32 @@ const SearchButton = styled(Button)`
 
 const Search = () => {
 	const [inputValue, setInputValue] = useState("");
+	const [isWrongInput, setIsWrongInput] = useState("false");
 	const { updateForecast } = useWeather();
 
 	const handleOnSubmit = (event) => {
 		event.preventDefault();
-		updateForecast({ city: inputValue });
+		if (/[^a-zA-Z\s]/.test(inputValue)) {
+			setIsWrongInput("true");
+		} else {
+			setIsWrongInput("false");
+			updateForecast({ city: inputValue });
+		}
+	};
+
+	const handleInputChange = (e) => {
+		const value = e.target.value;
+		setInputValue(value);
 	};
 
 	return (
-		<SearchBox>
+		<SearchBox error={isWrongInput}>
 			<Form onSubmit={handleOnSubmit}>
 				<Input
 					type="text"
 					placeholder="Search for cities"
 					value={inputValue}
-					onChange={(e) => setInputValue(e.target.value)}
+					onChange={handleInputChange}
 				/>
 				<SearchButton type="submit">
 					<FaSearch />
