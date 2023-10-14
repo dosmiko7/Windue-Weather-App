@@ -17,32 +17,30 @@ const InfoContainer = styled.div`
 	flex-direction: column;
 `;
 
-const CityNameInfo = styled.h1`
+const CityNameInfo = styled.h2`
 	color: var(--font-color-2);
 `;
 
-const RainInfo = styled.h6`
+const RainInfo = styled.h5`
 	font-weight: var(--font-weight-500);
 	padding: 1.2rem 0;
-	flex-grow: 1;
 `;
 
 const TemperatureInfo = styled.span`
 	color: var(--font-color-2);
 	font-size: 4.2rem;
 	font-weight: var(--font-weight-700);
+	text-align: end;
 `;
 
 const ImageContainer = styled.div`
 	display: flex;
-	justify-content: center;
+	justify-content: flex-end;
 	align-items: center;
-	width: 50%;
 	max-height: 100%;
 `;
 
 const Image = styled.img`
-	height: 12rem;
 	width: auto;
 `;
 
@@ -55,14 +53,16 @@ const ForecastBasicInfo = () => {
 			<InfoContainer>
 				<CityNameInfo>{cityName}</CityNameInfo>
 				<RainInfo>Chance of rain: {rainProb}%</RainInfo>
+			</InfoContainer>
+			<InfoContainer>
+				<ImageContainer>
+					<Image
+						src={condition.icon}
+						alt={condition.text}
+					/>
+				</ImageContainer>
 				<TemperatureInfo>{temp}&#8451;</TemperatureInfo>
 			</InfoContainer>
-			<ImageContainer>
-				<Image
-					src={condition.icon}
-					alt={condition.text}
-				/>
-			</ImageContainer>
 		</StyledBasicInfo>
 	);
 };
