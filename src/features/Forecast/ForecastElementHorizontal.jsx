@@ -1,5 +1,6 @@
 import { styled } from "styled-components";
 import PropTypes from "prop-types";
+import { TbWind } from "react-icons/tb";
 
 import ForecastCondition from "./ForecastCondition";
 
@@ -8,8 +9,11 @@ const Day = styled.span`
 `;
 
 const Wind = styled.span`
+	font-size: 1.8rem;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
 	width: 30%;
-	text-align: end;
 `;
 
 const ForecastElementHorizontal = ({ data }) => {
@@ -18,7 +22,10 @@ const ForecastElementHorizontal = ({ data }) => {
 		<>
 			<Day>{day}</Day>
 			<ForecastCondition condition={condition} />
-			<Wind>{wind}</Wind>
+			<Wind>
+				<TbWind />
+				{wind}km/h
+			</Wind>
 		</>
 	);
 };

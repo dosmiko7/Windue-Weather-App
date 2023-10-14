@@ -1,4 +1,4 @@
-import { FaSun, FaMoon } from "react-icons/fa";
+import { TbMoonFilled, TbSunFilled } from "react-icons/tb";
 import { styled } from "styled-components";
 
 import Button from "./Button";
@@ -50,11 +50,11 @@ const DarkThemeToggle = () => {
 			isdarktheme={isDarkTheme ? "yes" : "no"}
 		>
 			<Moon>
-				<FaMoon />
+				<TbMoonFilled />
 			</Moon>
 
 			<Sun>
-				<FaSun />
+				<TbSunFilled />
 			</Sun>
 		</StyledToggleButton>
 	);

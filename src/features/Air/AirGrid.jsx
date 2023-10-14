@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
 import PropTypes from "prop-types";
-import { FaTemperatureHalf, FaWind, FaDroplet, FaSun } from "react-icons/fa6";
+import { TbTemperature, TbBrandDrops, TbArrowBarToDown, TbUvIndex } from "react-icons/tb";
 
 import AirElement from "./AirElement";
 
@@ -18,22 +18,22 @@ const AirGrid = ({ data }) => {
 	return (
 		<StyledAirGrid>
 			<AirElement
-				symbol={<FaTemperatureHalf />}
+				symbol={<TbTemperature />}
 				title="Real Feel"
 				data={tempFeel}
 			/>
 			<AirElement
-				symbol={<FaWind />}
+				symbol={<TbBrandDrops />}
 				title="Humidity"
 				data={humidity}
 			/>
 			<AirElement
-				symbol={<FaDroplet />}
+				symbol={<TbArrowBarToDown />}
 				title="Pressure"
 				data={pressure}
 			/>
 			<AirElement
-				symbol={<FaSun />}
+				symbol={<TbUvIndex />}
 				title="UV Index"
 				data={uv}
 			/>

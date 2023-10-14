@@ -1,5 +1,6 @@
 import { styled } from "styled-components";
 import { useContext } from "react";
+
 import { WeatherContext } from "../../context/WeatherContext";
 
 import Container from "../../ui/Container";
