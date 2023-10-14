@@ -5,7 +5,6 @@ const ImageContainer = styled.div``;
 
 const Image = styled.img``;
 
-// TODO: transform condition into image
 const ForecastCondition = ({ condition }) => {
 	return (
 		<ImageContainer>
