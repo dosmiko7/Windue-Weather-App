@@ -6,6 +6,7 @@ import { WeatherContext } from "../../context/WeatherContext";
 
 import Container, { ContainerName } from "../../ui/Container";
 import ForecastList from "./ForecastList";
+import { getClosestPeriods } from "../../utils/getClosestPeriods";
 
 const StyledTodayForecast = styled(Container)`
 	padding: 2.4rem 1.6rem;
@@ -13,13 +14,13 @@ const StyledTodayForecast = styled(Container)`
 
 const TodayForecast = ({ hoursCount, variant }) => {
 	const { forecast } = useContext(WeatherContext);
-	const todayForecast = forecast.todayForecast;
+	const periods = getClosestPeriods(forecast.todayForecast, new Date(), hoursCount);
 
 	return (
 		<StyledTodayForecast variant={variant}>
 			<ContainerName>Today&apos;s Forecast</ContainerName>
 			<ForecastList
-				forecast={todayForecast.slice(0, hoursCount)}
+				forecast={periods}
 				orientation="horizontal"
 			/>
 		</StyledTodayForecast>

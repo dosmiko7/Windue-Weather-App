@@ -22,7 +22,7 @@ const formatData = (data) => {
 	for (const hour of hoursToExtract) {
 		const hourData = data.forecast.forecastday[0].hour[hour];
 		todayForecast.push({
-			time: hourData.time.slice(-6),
+			time: hourData.time.slice(-5),
 			condition: {
 				icon: hourData.condition.icon,
 				text: hourData.condition.text,
