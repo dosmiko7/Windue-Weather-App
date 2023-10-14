@@ -2,12 +2,14 @@ import { createContext, useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import getForecast from "../services/apiForecast";
 import formatData from "../utils/formatData";
+import { useGeolocation } from "../hooks/useGeolocation";
 
 export const WeatherContext = createContext();
 
 const WeatherContextProvider = ({ children }) => {
 	const [forecast, setForecast] = useState(null);
 	const [searchHistory, setSearchHistory] = useState([]);
+	const { userLocation } = useGeolocation();
 
 	const updateForecast = async ({ city }) => {
 		const data = await getForecast({ city });
@@ -29,8 +31,10 @@ const WeatherContextProvider = ({ children }) => {
 	};
 
 	useEffect(() => {
-		updateForecast({ city: "Warsaw" });
-	}, []);
+		if (userLocation !== "") {
+			updateForecast({ city: userLocation });
+		}
+	}, [userLocation]);
 
 	return (
 		<WeatherContext.Provider value={{ forecast, searchHistory, updateForecast }}>{children}</WeatherContext.Provider>

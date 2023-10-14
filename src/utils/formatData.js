@@ -1,14 +1,5 @@
 import convertDateIntoDayName from "./convertDateIntoDayName";
 
-/*
-co: 303.8 Carbon Monoxide (μg/m3)
-no2: 18.2 Nitrogen dioxide (μg/m3)
-o3: 35.1  Ozone (μg/m3)
-pm10: 10.4 PM10 (μg/m3)
-pm2_5: 8.5 PM2.5 (μg/m3)
-so2: 15.7 Sulphur dioxide (μg/m3)
-*/
-
 const formatData = (data) => {
 	console.log(data);
 	const current = {
