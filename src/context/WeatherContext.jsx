@@ -1,8 +1,10 @@
 import { createContext, useEffect, useState } from "react";
 import PropTypes from "prop-types";
+import { toast } from "react-hot-toast";
+
+import { useGeolocation } from "../hooks/useGeolocation";
 import getForecast from "../services/apiForecast";
 import formatData from "../utils/formatData";
-import { useGeolocation } from "../hooks/useGeolocation";
 
 export const WeatherContext = createContext();
 
@@ -13,21 +15,23 @@ const WeatherContextProvider = ({ children }) => {
 
 	const updateForecast = async ({ city }) => {
 		const data = await getForecast({ city });
-		const formattedData = formatData(data);
-		setForecast(formattedData);
+		if (!data.error) {
+			const formattedData = formatData(data);
+			setForecast(formattedData);
 
-		const { cityName, condition, temp } = formattedData.current;
-		const searchData = {
-			cityName,
-			condition,
-			temp,
-			date: new Date().toLocaleTimeString("pl-PL", {
-				hour: "2-digit",
-				minute: "2-digit",
-			}),
-		};
+			const { cityName, condition, temp } = formattedData.current;
+			const searchData = {
+				cityName,
+				condition,
+				temp,
+				date: new Date().toLocaleTimeString("pl-PL", {
+					hour: "2-digit",
+					minute: "2-digit",
+				}),
+			};
 
-		setSearchHistory((prevHistory) => [searchData, ...prevHistory]);
+			setSearchHistory((prevHistory) => [searchData, ...prevHistory]);
+		} else toast.error(data.error.message);
 	};
 
 	useEffect(() => {
