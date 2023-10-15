@@ -15,6 +15,7 @@ const formatData = (data) => {
 			pm10: data.current.air_quality.pm10,
 			pm2_5: data.current.air_quality.pm2_5,
 		},
+		location: { lat: data.location.lat, lng: data.location.lon },
 	};
 
 	const hoursToExtract = [6, 9, 12, 15, 18, 21];
