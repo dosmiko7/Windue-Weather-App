@@ -27,6 +27,7 @@ const Map = () => {
 	return (
 		<Container variant="nonColor">
 			<MapContainer
+				key={`${lat}-${lng}`}
 				center={{ lat: lat, lng: lng }}
 				zoom={13}
 				scrollWheelZoom={true}

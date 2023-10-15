@@ -1,6 +1,3 @@
-import { useContext } from "react";
-import { WeatherContext } from "../context/WeatherContext";
-
 import OutletLayout from "../ui/OutletLayout";
 import Map from "../features/Map/Map";
 import Sidebar from "../ui/Sidebar";
