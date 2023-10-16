@@ -1,7 +1,6 @@
 import convertDateIntoDayName from "./convertDateIntoDayName";
 
 const formatData = (data) => {
-	console.log(data);
 	const current = {
 		cityName: data.location.name,
 		rainProb: data.forecast.forecastday[0].day.daily_chance_of_rain,

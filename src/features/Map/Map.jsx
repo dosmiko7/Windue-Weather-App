@@ -1,48 +1,48 @@
-import { Marker, Popup, MapContainer, TileLayer, useMapEvent } from "react-leaflet";
+import { Marker, Popup, MapContainer, TileLayer } from "react-leaflet";
+import { useContext, useEffect, useRef, useState } from "react";
 
 import { WeatherContext } from "../../context/WeatherContext";
 
 import Container from "../../ui/Container";
-import { useContext } from "react";
+import ChangeMapView from "./ChangeMapView";
 
 const Map = () => {
 	const { forecast, updateForecast } = useContext(WeatherContext);
-	const { lat, lng } = forecast.current.location;
+	const [zoom, setZoom] = useState(9);
+	const mapRef = useRef();
+	const location = forecast.current.location;
 
-	const mapStyles = {
-		width: "100%",
-		height: "100%",
-	};
+	useEffect(() => {
+		if (mapRef.current) {
+			mapRef.current.setView([location.lat, location.lng], zoom);
+		}
+	}, [location, zoom]);
 
-	const ChangeMapView = () => {
-		const map = useMapEvent("click", (event) => {
-			const coordinates = `${event.latlng.lat},${event.latlng.lng}`;
-			console.log("coordinates: ", coordinates);
-			updateForecast({ city: coordinates });
-			map.setView([event.latlng.lat, event.latlng.lng], map.getZoom());
-		});
-		return null;
+	const handleMapClick = (event) => {
+		const coordinates = `${event.latlng.lat},${event.latlng.lng}`;
+		setZoom(event.sourceTarget._zoom);
+		updateForecast({ city: coordinates });
 	};
 
 	return (
 		<Container variant="nonColor">
 			<MapContainer
-				key={`${lat}-${lng}`}
-				center={{ lat: lat, lng: lng }}
-				zoom={13}
+				ref={mapRef}
+				center={{ lat: location.lat, lng: location.lng }}
+				zoom={zoom}
 				scrollWheelZoom={true}
-				style={mapStyles}
+				style={{ width: "100%", height: "100%" }}
 			>
 				<TileLayer
 					attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 					url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
 				/>
-				<Marker position={[lat, lng]}>
+				<Marker position={[location.lat, location.lng]}>
 					<Popup>
 						A pretty CSS3 popup. <br /> Easily customizable.
 					</Popup>
 				</Marker>
-				<ChangeMapView />
+				<ChangeMapView onMapClick={handleMapClick} />
 			</MapContainer>
 		</Container>
 	);

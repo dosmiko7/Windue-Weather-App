@@ -14,7 +14,6 @@ const WeatherContextProvider = ({ children }) => {
 	const { userLocation } = useGeolocation();
 
 	const updateForecast = async ({ city }) => {
-		console.log(city);
 		const data = await getForecast({ city });
 		if (!data.error) {
 			const formattedData = formatData(data);

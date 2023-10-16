@@ -6,7 +6,6 @@ import { weatherAPIKey } from "./weatherAPIKey";
 */
 const getForecast = async ({ city, days = 3 }) => {
 	const correctDays = days > 3 ? 3 : days;
-	console.log(city);
 
 	try {
 		const response = await fetch(
