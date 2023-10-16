@@ -36,7 +36,7 @@ const Search = () => {
 
 	const handleOnSubmit = (event) => {
 		event.preventDefault();
-		if (/[^a-zA-Z\s]/.test(inputValue)) {
+		if (/[^a-zA-Ząćęłńóśźż\s]/.test(inputValue)) {
 			setIsWrongInput("true");
 		} else {
 			setIsWrongInput("false");
