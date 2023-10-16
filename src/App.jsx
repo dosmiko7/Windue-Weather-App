@@ -32,7 +32,7 @@ const App = () => {
 								element={<Cities />}
 							/>
 							<Route
-								path="geolocation"
+								path="map"
 								element={<Geolocation />}
 							/>
 						</Route>

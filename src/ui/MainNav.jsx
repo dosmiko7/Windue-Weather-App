@@ -24,8 +24,8 @@ const MainNav = () => {
 			/>
 			<MenuLink
 				icon={<FaMap />}
-				name="Geolocation"
-				address="geolocation"
+				name="Map"
+				address="map"
 			/>
 		</StyledMainNav>
 	);

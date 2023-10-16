@@ -6,8 +6,8 @@ import ForecastCondition from "../Forecast/ForecastCondition";
 
 const StyledSearchesElement = styled(ListElement)`
 	background-color: var(--background-color-1);
-	padding-top: 2.8rem;
-	padding-bottom: 2.8rem;
+	padding-top: 2.6rem;
+	padding-bottom: 2.6rem;
 	border-radius: 20px;
 `;
 
@@ -18,7 +18,7 @@ const Box = styled.div`
 	padding-left: 2.6rem;
 `;
 
-const CityName = styled.h3`
+const CityName = styled.h4`
 	color: var(--font-color-2);
 `;
 

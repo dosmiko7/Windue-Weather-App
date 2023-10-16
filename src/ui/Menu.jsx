@@ -9,7 +9,7 @@ const StyledMenu = styled(Container)`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	gap: 7.2rem;
+	gap: 6.8rem;
 `;
 
 const Menu = () => {
