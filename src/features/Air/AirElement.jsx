@@ -28,7 +28,7 @@ const InfoData = styled.span`
 const additionalSymbols = {
 	"Real Feel": "℃",
 	Humidity: "%",
-	Pressure: "mb",
+	Pressure: "hPa",
 };
 
 const AirElement = ({ symbol, title, data }) => {
