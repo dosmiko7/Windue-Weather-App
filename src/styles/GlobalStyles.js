@@ -92,5 +92,16 @@ a {
   text-decoration: none;
 }
 
+// Style for leaflet library
+.custom .leaflet-popup-content-wrapper {
+  padding: 1px;
+
+  & .leaflet-popup-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.8rem
+  }
+}
 
 `;
