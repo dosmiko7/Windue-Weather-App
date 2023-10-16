@@ -10,6 +10,7 @@ import Starter from "./windows/Starter";
 import Weather from "./windows/Weather";
 import Cities from "./windows/Cities";
 import Geolocation from "./windows/Geolocation";
+import PageNotFound from "./windows/PageNotFound";
 
 const App = () => {
 	return (
@@ -36,6 +37,10 @@ const App = () => {
 								element={<Geolocation />}
 							/>
 						</Route>
+						<Route
+							path="*"
+							element={<PageNotFound />}
+						/>
 					</Routes>
 				</BrowserRouter>
 				<Toaster
