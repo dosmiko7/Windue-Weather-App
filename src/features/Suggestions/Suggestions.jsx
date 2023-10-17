@@ -6,10 +6,9 @@ import useWeather from "../../hooks/useWeather";
 import getCities from "../../services/apiCities";
 import { formatCities } from "../../utils/formatData";
 
-// TODO: Still undefined
 const Suggestions = () => {
 	const [cities, setCities] = useState([]);
-	const { forecast } = useWeather();
+	const { forecast, updateForecast } = useWeather();
 	const location = forecast.current.location;
 
 	useEffect(() => {
@@ -25,7 +24,12 @@ const Suggestions = () => {
 
 		fetchData();
 	}, [location]);
-	console.log(cities);
+
+	const handleOnSuggestionClick = (location) => {
+		const coordinates = `${location.lat},${location.lng}`;
+		updateForecast({ city: coordinates });
+	};
+
 	return (
 		<Container variant="nonColor">
 			<ContainerName>Suggestions</ContainerName>
@@ -33,6 +37,7 @@ const Suggestions = () => {
 				<SuggestionsList
 					suggestions={cities}
 					orientation="horizontal"
+					onSuggestionClick={handleOnSuggestionClick}
 				/>
 			) : (
 				<div>Loading...</div>

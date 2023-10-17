@@ -20,11 +20,18 @@ const Distance = styled.span`
 	color: var(--font-color-2);
 `;
 
-const SuggestionElement = ({ suggestion }) => {
-	const { cityName, distance } = suggestion;
+const SuggestionElement = ({ suggestion, onSuggestionClick }) => {
+	const { cityName, location, distance } = suggestion;
+
+	const handleOnClick = () => {
+		onSuggestionClick(location);
+	};
 
 	return (
-		<StyledSuggestionElement orientation="vertical">
+		<StyledSuggestionElement
+			orientation="vertical"
+			onClick={handleOnClick}
+		>
 			<CityName>{cityName}</CityName>
 			<Distance>{distance}km;</Distance>
 		</StyledSuggestionElement>
@@ -33,6 +40,7 @@ const SuggestionElement = ({ suggestion }) => {
 
 SuggestionElement.propTypes = {
 	suggestion: PropTypes.object.isRequired,
+	onSuggestionClick: PropTypes.func,
 };
 
 export default SuggestionElement;

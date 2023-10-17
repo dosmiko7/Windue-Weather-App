@@ -9,7 +9,7 @@ const StyledSuggestionList = styled(List)`
 	gap: 1.2rem;
 `;
 
-const SuggestionsList = ({ suggestions, orientation }) => {
+const SuggestionsList = ({ suggestions, orientation, onSuggestionClick }) => {
 	return (
 		<StyledSuggestionList
 			orientation={orientation}
@@ -19,6 +19,7 @@ const SuggestionsList = ({ suggestions, orientation }) => {
 				<SuggestionElement
 					key={Math.random()}
 					suggestion={suggestion}
+					onSuggestionClick={onSuggestionClick}
 				/>
 			))}
 		</StyledSuggestionList>
@@ -28,6 +29,7 @@ const SuggestionsList = ({ suggestions, orientation }) => {
 SuggestionsList.propTypes = {
 	suggestions: PropTypes.array.isRequired,
 	orientation: PropTypes.string,
+	onSuggestionClick: PropTypes.func,
 };
 
 export default SuggestionsList;
