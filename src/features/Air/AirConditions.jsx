@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
-import { useContext } from "react";
-import { WeatherContext } from "../../context/WeatherContext";
+
+import useWeather from "../../hooks/useWeather";
 
 import Container, { ContainerName } from "../../ui/Container";
 import AirGrid from "./AirGrid";
@@ -20,7 +20,7 @@ const SeeMore = styled(Button)`
 `;
 
 const AirCondition = () => {
-	const { forecast } = useContext(WeatherContext);
+	const { forecast } = useWeather();
 	const airCondition = forecast.airCondition;
 	const details = forecast.current.details;
 

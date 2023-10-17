@@ -1,7 +1,6 @@
 import { styled } from "styled-components";
-import { useContext } from "react";
 
-import { WeatherContext } from "../../context/WeatherContext";
+import useWeather from "../../hooks/useWeather";
 
 import Container from "../../ui/Container";
 
@@ -45,7 +44,7 @@ const Image = styled.img`
 `;
 
 const ForecastBasicInfo = () => {
-	const { forecast } = useContext(WeatherContext);
+	const { forecast } = useWeather();
 	const { cityName, rainProb, temp, condition } = forecast.current;
 
 	return (

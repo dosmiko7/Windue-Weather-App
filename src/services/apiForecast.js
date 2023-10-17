@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import { weatherAPIKey } from "./weatherAPIKey";
+import { weatherAPIKey } from "./APIKeys";
 
 /*
 	Note: The free version of WeatherAPI can not support more than 3 days

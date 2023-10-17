@@ -1,6 +1,6 @@
 import convertDateIntoDayName from "./convertDateIntoDayName";
 
-const formatData = (data) => {
+export const formatForecast = (data) => {
 	const current = {
 		cityName: data.location.name,
 		rainProb: data.forecast.forecastday[0].day.daily_chance_of_rain,
@@ -50,4 +50,37 @@ const formatData = (data) => {
 	return { current, todayForecast, nDayForecast, airCondition };
 };
 
-export default formatData;
+export const formatSearch = (formattedData) => {
+	const { cityName, condition, temp } = formattedData.current;
+	const searchData = {
+		cityName,
+		condition,
+		temp,
+		date: new Date().toLocaleTimeString("pl-PL", {
+			hour: "2-digit",
+			minute: "2-digit",
+		}),
+	};
+
+	return searchData;
+};
+
+export const formatLocation = ({ latitude, longitude }) => {
+	let latitudeSymbol = latitude >= 0 ? "+" : "-";
+	let longitudeSymbol = longitude >= 0 ? "+" : "-";
+	let location = `${latitudeSymbol}${latitude}${longitudeSymbol}${longitude}`;
+
+	return location;
+};
+
+export const formatCities = (data) => {
+	let formattedCities = [];
+	data.data.forEach((el) => {
+		formattedCities.push({
+			cityName: el.city,
+			location: { lat: el.latitude, lng: el.longitude },
+			distance: el.distance,
+		});
+	});
+	return formattedCities;
+};

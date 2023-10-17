@@ -1,17 +1,17 @@
 import PropTypes from "prop-types";
 import { styled } from "styled-components";
 
+import useWeather from "../../hooks/useWeather";
+
 import Container, { ContainerName } from "../../ui/Container";
 import ForecastList from "./ForecastList";
-import { useContext } from "react";
-import { WeatherContext } from "../../context/WeatherContext";
 
 const StyledNDaysForecast = styled(Container)`
 	padding: 1.6rem;
 `;
 
 const NDaysForecast = ({ daysCount, variant }) => {
-	const { forecast } = useContext(WeatherContext);
+	const { forecast } = useWeather();
 	const nDayForecast = forecast.nDayForecast;
 
 	return (

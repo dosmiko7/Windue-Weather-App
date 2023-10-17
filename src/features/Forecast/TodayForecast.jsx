@@ -1,8 +1,7 @@
 import { styled } from "styled-components";
 import PropTypes from "prop-types";
 
-import { useContext } from "react";
-import { WeatherContext } from "../../context/WeatherContext";
+import useWeather from "../../hooks/useWeather";
 
 import Container, { ContainerName } from "../../ui/Container";
 import ForecastList from "./ForecastList";
@@ -13,7 +12,7 @@ const StyledTodayForecast = styled(Container)`
 `;
 
 const TodayForecast = ({ hoursCount, variant }) => {
-	const { forecast } = useContext(WeatherContext);
+	const { forecast } = useWeather();
 	const periods = getClosestPeriods(forecast.todayForecast, new Date(), hoursCount);
 
 	return (

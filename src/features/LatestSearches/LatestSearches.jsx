@@ -1,13 +1,12 @@
-import { useContext } from "react";
 import PropTypes from "prop-types";
 
-import { WeatherContext } from "../../context/WeatherContext";
+import useWeather from "../../hooks/useWeather";
 
 import Container, { ContainerName } from "../../ui/Container";
 import LatestSearchesList from "./LatestSearchesList";
 
 const LatestSearches = ({ count = 3 }) => {
-	const { searchHistory } = useContext(WeatherContext);
+	const { searchHistory } = useWeather();
 	return (
 		<Container variant="nonColor">
 			<ContainerName>Latest Searches</ContainerName>

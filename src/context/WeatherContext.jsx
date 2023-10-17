@@ -4,32 +4,22 @@ import { toast } from "react-hot-toast";
 
 import { useGeolocation } from "../hooks/useGeolocation";
 import getForecast from "../services/apiForecast";
-import formatData from "../utils/formatData";
+import { formatForecast, formatSearch } from "../utils/formatData";
 
 export const WeatherContext = createContext();
 
 const WeatherContextProvider = ({ children }) => {
-	const [forecast, setForecast] = useState(null);
+	const [forecast, setForecast] = useState({});
 	const [searchHistory, setSearchHistory] = useState([]);
 	const { userLocation } = useGeolocation();
 
 	const updateForecast = async ({ city }) => {
 		const data = await getForecast({ city });
 		if (!data.error) {
-			const formattedData = formatData(data);
+			const formattedData = formatForecast(data);
 			setForecast(formattedData);
 
-			const { cityName, condition, temp } = formattedData.current;
-			const searchData = {
-				cityName,
-				condition,
-				temp,
-				date: new Date().toLocaleTimeString("pl-PL", {
-					hour: "2-digit",
-					minute: "2-digit",
-				}),
-			};
-
+			const searchData = formatSearch(formattedData);
 			setSearchHistory((prevHistory) => [searchData, ...prevHistory]);
 		} else toast.error(data.error.message);
 	};

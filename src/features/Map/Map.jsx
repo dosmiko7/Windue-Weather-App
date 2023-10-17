@@ -1,14 +1,14 @@
 import { MapContainer, TileLayer } from "react-leaflet";
-import { useContext, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
-import { WeatherContext } from "../../context/WeatherContext";
+import useWeather from "../../hooks/useWeather";
 
 import Container from "../../ui/Container";
 import ChangeMapView from "./ChangeMapView";
 import MapMarker from "./MapMarker";
 
 const Map = () => {
-	const { forecast, updateForecast } = useContext(WeatherContext);
+	const { forecast, updateForecast } = useWeather();
 	const [zoom, setZoom] = useState(9);
 	const mapRef = useRef();
 	const { location, cityName, condition, temp } = forecast.current;
