@@ -38,6 +38,10 @@ const Map = () => {
 					attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 					url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
 				/>
+				<TileLayer
+					attribution='&copy; <a href="https://openweathermap.org">OpenWeather</a> contributors'
+					url="https://tile.openweathermap.org/map/temp_new/{z}/{x}/{y}.png?appid=3960cd393d839b44f5b1434370c66d00"
+				/>
 				<MapMarker
 					info={{ cityName: cityName, condition: condition, temp: temp }}
 					position={[location.lat, location.lng]}
