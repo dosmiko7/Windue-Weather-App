@@ -6,17 +6,24 @@ import ListElement from "../../ui/ListElement";
 const StyledSuggestionElement = styled(ListElement)`
 	background-color: var(--background-color-1);
 	border-radius: 20px;
-	padding: 2.4rem 4.8rem;
+	padding: 2.4rem 3.6rem;
 	gap: 1.2rem;
 	flex: 0;
+	transition: all 0.3s;
+
+	&:hover {
+		background-color: var(--background-color-2);
+		cursor: pointer;
+	}
 `;
-const CityName = styled.h3`
+const CityName = styled.h4`
 	color: var(--font-color-2);
+	text-align: center;
 `;
 
 const Distance = styled.span`
 	font-weight: var(--font-weight-500);
-	font-size: 2.8rem;
+	font-size: 2rem;
 	color: var(--font-color-2);
 `;
 
@@ -33,7 +40,7 @@ const SuggestionElement = ({ suggestion, onSuggestionClick }) => {
 			onClick={handleOnClick}
 		>
 			<CityName>{cityName}</CityName>
-			<Distance>{distance}km;</Distance>
+			<Distance>{distance}km</Distance>
 		</StyledSuggestionElement>
 	);
 };
