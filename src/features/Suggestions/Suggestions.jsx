@@ -5,6 +5,7 @@ import SuggestionsList from "./SuggestionsList";
 import useWeather from "../../hooks/useWeather";
 import getCities from "../../services/apiCities";
 import { formatCities } from "../../utils/formatData";
+import Spinner from "../../ui/Spinner";
 
 const Suggestions = () => {
 	const [cities, setCities] = useState([]);
@@ -40,7 +41,7 @@ const Suggestions = () => {
 					onSuggestionClick={handleOnSuggestionClick}
 				/>
 			) : (
-				<div>Loading...</div>
+				<Spinner />
 			)}
 		</Container>
 	);
