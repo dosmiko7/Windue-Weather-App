@@ -6,7 +6,6 @@ import { weatherAPIKey } from "./APIKeys";
 */
 const getForecast = async ({ city, days = 3 }) => {
 	const correctDays = days > 3 ? 3 : days;
-	console.log("JESTEM");
 
 	try {
 		const response = await fetch(

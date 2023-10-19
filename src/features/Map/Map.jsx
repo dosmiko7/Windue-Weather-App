@@ -24,7 +24,6 @@ const Map = () => {
 	const [layer, setLayer] = useState("default");
 	const mapRef = useRef();
 	const { location, cityName, condition, temp } = forecast.current;
-	console.log("RENDER");
 
 	useEffect(() => {
 		if (mapRef.current) {
