@@ -9,7 +9,7 @@ const StyledMapModes = styled.div`
 	position: absolute;
 	right: 0;
 
-	background-color: var(--background-app-1);
+	background: var(--background-app-1);
 	color: var(--font-color-2);
 	border-radius: 0 0 0 20px;
 	z-index: 10;

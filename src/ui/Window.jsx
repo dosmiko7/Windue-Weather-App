@@ -6,7 +6,7 @@ const Window = styled.div`
 	border-radius: 20px;
 	margin: 30px auto;
 	padding: 2.2rem;
-	background-color: var(--background-app-1);
+	background: var(--background-app-1);
 `;
 
 export default Window;

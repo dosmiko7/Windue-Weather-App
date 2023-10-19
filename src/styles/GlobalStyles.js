@@ -3,7 +3,8 @@ import { createGlobalStyle } from "styled-components";
 export const GlobalStyles = createGlobalStyle`
 :root {
   &, &.dark-theme {
-      --background-app-1: #0b131e;
+      --background-app-1: linear-gradient(135deg, hsla(215, 46%, 8%, 1) 59%, hsla(216, 30%, 18%, 1) 100%);
+;
 
       --background-color-1: #202b3b;
       --background-color-2: #35455e;
@@ -24,18 +25,15 @@ export const GlobalStyles = createGlobalStyle`
   }
   
   &.light-theme {
-      --background-app-1: #775B46;
+      --background-app-1: linear-gradient(135deg, hsla(204, 41%, 37%, 1) 16%, hsla(225, 89%, 47%, 1) 100%);
 
-      --background-color-1: #AD8B73;
-      --background-color-2: #CEAB93;
-      --background-color-3: #E3CAA5;
-      --background-color-4: #D5AE00;
-      --background-color-5: #8C7200;
+      --background-color-1: #749BC2;
+      --background-color-2: #91C8E4;
+      --background-color-3: #F6F4EB;
 
-      --font-color-1: #FFFBE9;
-      --font-color-2: #FFF7D5;
+      --font-color-1: #f1f1f1;
 
-      --misc-color-1: #A9866D;
+      --misc-color-1: #598fb2;
   }
   
 }

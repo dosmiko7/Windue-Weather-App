@@ -8,7 +8,7 @@ const StyledToggleButton = styled(Button)`
 	position: relative;
 	font-size: 1.6rem;
 	width: 80%;
-	background-color: ${(props) => (props.isdarktheme === "yes" ? "black" : "white")};
+	background-color: ${(props) => (props.isdarktheme === "yes" ? "#0b131e" : "#4682A9")};
 	padding: 0.6rem;
 	transition: background-color 0.3s ease;
 
