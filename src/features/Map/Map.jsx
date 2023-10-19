@@ -1,17 +1,30 @@
 import { MapContainer, TileLayer } from "react-leaflet";
 import { useEffect, useRef, useState } from "react";
+import { styled } from "styled-components";
 
 import useWeather from "../../hooks/useWeather";
 
 import Container from "../../ui/Container";
 import ChangeMapView from "./ChangeMapView";
 import MapMarker from "./MapMarker";
+import MapLayer from "./MapLayer";
+import MapModes from "./MapModes";
+
+const StyledMap = styled(Container)`
+	position: relative;
+`;
+
+const StyledMapContainer = styled(MapContainer)`
+	z-index: 2;
+`;
 
 const Map = () => {
 	const { forecast, updateForecast } = useWeather();
 	const [zoom, setZoom] = useState(9);
+	const [layer, setLayer] = useState("default");
 	const mapRef = useRef();
 	const { location, cityName, condition, temp } = forecast.current;
+	console.log("RENDER");
 
 	useEffect(() => {
 		if (mapRef.current) {
@@ -25,9 +38,15 @@ const Map = () => {
 		updateForecast({ city: coordinates });
 	};
 
+	const handleLayerChange = (newLayer) => {
+		if (newLayer === layer) return;
+		setLayer(newLayer);
+	};
+
 	return (
-		<Container variant="nonColor">
-			<MapContainer
+		<StyledMap variant="nonColor">
+			<MapModes onLayerChange={handleLayerChange} />
+			<StyledMapContainer
 				ref={mapRef}
 				center={{ lat: location.lat, lng: location.lng }}
 				zoom={zoom}
@@ -38,17 +57,14 @@ const Map = () => {
 					attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 					url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
 				/>
-				<TileLayer
-					attribution='&copy; <a href="https://openweathermap.org">OpenWeather</a> contributors'
-					url="https://tile.openweathermap.org/map/temp_new/{z}/{x}/{y}.png?appid=3960cd393d839b44f5b1434370c66d00"
-				/>
+				<MapLayer layer={layer} />
 				<MapMarker
 					info={{ cityName: cityName, condition: condition, temp: temp }}
 					position={[location.lat, location.lng]}
 				/>
 				<ChangeMapView onMapClick={handleMapClick} />
-			</MapContainer>
-		</Container>
+			</StyledMapContainer>
+		</StyledMap>
 	);
 };
 
