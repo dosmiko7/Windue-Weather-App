@@ -14,7 +14,7 @@ const MapLayer = ({ layer }) => {
 };
 
 MapLayer.propTypes = {
-	layer: PropTypes.array.isRequired,
+	layer: PropTypes.string.isRequired,
 };
 
 export default MapLayer;
