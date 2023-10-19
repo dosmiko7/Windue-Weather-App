@@ -17,18 +17,22 @@ export const formatForecast = (data) => {
 		location: { lat: data.location.lat, lng: data.location.lon },
 	};
 
-	const hoursToExtract = [6, 9, 12, 15, 18, 21];
+	const daysToExtract = [0, 1];
 	const todayForecast = [];
-	for (const hour of hoursToExtract) {
-		const hourData = data.forecast.forecastday[0].hour[hour];
-		todayForecast.push({
-			time: hourData.time.slice(-5),
-			condition: {
-				icon: hourData.condition.icon,
-				text: hourData.condition.text,
-			},
-			temp: hourData.temp_c,
-		});
+	for (const day of daysToExtract) {
+		let dayData = data.forecast.forecastday[day].hour;
+		for (let hour = 0; hour < dayData.length; hour++) {
+			const hourData = dayData[hour];
+			todayForecast.push({
+				day: hourData.time.slice(0, 10),
+				time: hourData.time.slice(-5),
+				condition: {
+					icon: hourData.condition.icon,
+					text: hourData.condition.text,
+				},
+				temp: hourData.temp_c,
+			});
+		}
 	}
 
 	const nDayForecast = [];
