@@ -5,11 +5,12 @@ import { toast } from "react-hot-toast";
 import { useGeolocation } from "../hooks/useGeolocation";
 import getForecast from "../services/apiForecast";
 import { formatForecast, formatSearch } from "../utils/formatData";
+import { defaultValue } from "./defaultValue";
 
 export const WeatherContext = createContext();
 
 const WeatherContextProvider = ({ children }) => {
-	const [forecast, setForecast] = useState({});
+	const [forecast, setForecast] = useState(defaultValue);
 	const [searchHistory, setSearchHistory] = useState([]);
 	const { userLocation } = useGeolocation();
 
@@ -17,6 +18,7 @@ const WeatherContextProvider = ({ children }) => {
 		const data = await getForecast({ city });
 		if (!data.error) {
 			const formattedData = formatForecast(data);
+			console.log(formattedData);
 			setForecast(formattedData);
 
 			const searchData = formatSearch(formattedData);
