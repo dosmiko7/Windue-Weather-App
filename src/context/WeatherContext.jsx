@@ -18,7 +18,6 @@ const WeatherContextProvider = ({ children }) => {
 		const data = await getForecast({ city });
 		if (!data.error) {
 			const formattedData = formatForecast(data);
-			console.log(formattedData);
 			setForecast(formattedData);
 
 			const searchData = formatSearch(formattedData);
