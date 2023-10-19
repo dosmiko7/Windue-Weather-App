@@ -75,13 +75,14 @@ export const formatLocation = ({ latitude, longitude }) => {
 
 export const formatCities = (data) => {
 	let formattedCities = [];
-	data.geonames.forEach((el) => {
+	for (let i = 1; i < data.geonames.length; i++) {
+		const el = data.geonames[i];
 		let tmpDst = el.distance;
 		formattedCities.push({
 			cityName: el.name,
 			location: { lat: el.lat, lng: el.lng },
 			distance: tmpDst.slice(0, 5),
 		});
-	});
+	}
 	return formattedCities;
 };
