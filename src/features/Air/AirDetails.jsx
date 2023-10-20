@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 
 import List from "../../ui/List";
 import ListElement from "../../ui/ListElement";
+import Container from "../../ui/Container";
 
 const detailsName = {
 	carbon: "Carbon Monoxide",
@@ -12,6 +13,11 @@ const detailsName = {
 	pm10: "PM2.5",
 	pm2_5: "Sulphur dioxide",
 };
+
+const StyledAirDetails = styled(Container)`
+	width: 42rem;
+	height: 48rem;
+`;
 
 const DetailList = styled(List)`
 	height: 100%;
@@ -32,14 +38,16 @@ const DetailValue = styled.span`
 
 const AirDetails = ({ details }) => {
 	return (
-		<DetailList orientation="vertical">
-			{Object.keys(details).map((key) => (
-				<DetailElement key={Math.random()}>
-					<DetailName>{detailsName[key]} (μg/m3)</DetailName>
-					<DetailValue>{details[key]}</DetailValue>
-				</DetailElement>
-			))}
-		</DetailList>
+		<StyledAirDetails>
+			<DetailList orientation="vertical">
+				{Object.keys(details).map((key) => (
+					<DetailElement key={Math.random()}>
+						<DetailName>{detailsName[key]} (μg/m3)</DetailName>
+						<DetailValue>{details[key]}</DetailValue>
+					</DetailElement>
+				))}
+			</DetailList>
+		</StyledAirDetails>
 	);
 };
 

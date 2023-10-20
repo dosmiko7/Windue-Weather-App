@@ -1,10 +1,16 @@
 import PropTypes from "prop-types";
 
+import { styled } from "styled-components";
 import Container from "../../ui/Container";
+
+const StyledDetails = styled(Container)`
+	width: 70rem;
+	height: 50rem;
+`;
 
 const ForecastDayDetails = ({ details }) => {
 	console.log("ForecastDayDetails: " + details);
-	return <Container>DETAILS</Container>;
+	return <StyledDetails>DETAILS</StyledDetails>;
 };
 
 ForecastDayDetails.propTypes = {

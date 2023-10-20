@@ -20,8 +20,6 @@ const Overlay = styled.div`
 
 const StyledModal = styled.div`
 	position: fixed;
-	height: 42rem;
-	width: 36rem;
 	left: 50%;
 	top: 50%;
 	transform: translate(-50%, -50%);
