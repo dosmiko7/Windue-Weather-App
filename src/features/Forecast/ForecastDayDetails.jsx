@@ -1,47 +1,117 @@
 import PropTypes from "prop-types";
+import { GiRaining, GiSnowing } from "react-icons/gi";
+import { TbWind } from "react-icons/tb";
 
 import { styled } from "styled-components";
 import Container from "../../ui/Container";
 import CurrentForecast from "./CurrentForecast";
 
+const Flex = styled.div`
+	display: flex;
+`;
+
 const StyledDetails = styled(Container)`
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 	width: 70rem;
 	height: 50rem;
 `;
 
-/*
-const nDayForecast = [];
-	data.forecast.forecastday.forEach((day) => {
-		let details = [];
-		let tmpObj = {};
+const NameContainer = styled(Flex)`
+	flex-direction: column;
+	gap: 0.6rem;
+`;
 
-		tmpObj["day"] = convertDateIntoDayName(day.date);
-		tmpObj["condition"] = { icon: day.day.condition.icon, text: day.day.condition.text };
-		tmpObj["wind"] = day.day.avgvis_km;
-		tmpObj["rainProb"] = day.daily_chance_of_rain;
-		tmpObj["snowProb"] = day.daily_chance_of_snow;
-		day.hour.forEach((hour) => {
-			details.push({
-				time: hour.time.slice(-5),
-				condition: { icon: hour.condition.icon, text: hour.condition.text },
-				temp: hour.temp_c,
-			});
-		});
+const Day = styled.h2`
+	color: var(--font-color-2);
+`;
 
-		nDayForecast.push({ ...tmpObj, details: details });
-	});
-*/
+const Wind = styled(Flex)`
+	align-items: center;
+	gap: 0.8rem;
+`;
 
-const Day = styled.span``;
-const Precipitation = styled.h3``;
+const Box = styled(Flex)`
+	gap: 1.6rem;
+`;
+
+const Details = styled(Container)`
+	display: flex;
+	justify-content: space-between;
+	padding: 1.6rem;
+`;
+
+const ConditionContainer = styled(Flex)`
+	flex-direction: column;
+	align-items: center;
+`;
+
+const Precipitation = styled(Flex)`
+	flex-direction: column;
+	gap: 0.6rem;
+	font-size: 4.2rem;
+	font-weight: var(--font-weight-500);
+	align-items: center;
+`;
+
+const Value = styled.span`
+	font-size: 1.6rem;
+	text-align: center;
+	width: 100%;
+`;
+
+const ImageContainer = styled(Flex)`
+	align-items: center;
+	max-height: 100%;
+`;
+
+const Image = styled.img`
+	width: 8.8rem;
+`;
+
+const TemperatureInfo = styled.span`
+	color: var(--font-color-2);
+	font-size: 4.2rem;
+	font-weight: var(--font-weight-700);
+`;
 
 const ForecastDayDetails = ({ day }) => {
 	return (
 		<StyledDetails>
-			<CurrentForecast
-				hoursDataList={day.details}
-				hoursCount={4}
-			/>
+			<Details>
+				<NameContainer>
+					<Day>{day.day}</Day>
+					<Wind>
+						<TbWind /> {day.wind}km/h
+					</Wind>
+				</NameContainer>
+				<ConditionContainer>
+					<ImageContainer>
+						<Image
+							src={day.condition.icon}
+							alt={day.condition.text}
+						/>
+					</ImageContainer>
+					<TemperatureInfo>{day.temp}&#8451;</TemperatureInfo>
+				</ConditionContainer>
+				<Box>
+					<Precipitation>
+						<GiRaining />
+						<Value>{day.rainProb}%</Value>
+					</Precipitation>
+					<Precipitation>
+						<GiSnowing />
+						<Value>{day.snowProb}%</Value>
+					</Precipitation>
+				</Box>
+			</Details>
+			<Container>
+				<CurrentForecast
+					hoursDataList={day.details}
+					hoursCount={4}
+				/>
+			</Container>
 		</StyledDetails>
 	);
 };

@@ -13,6 +13,8 @@ const StyledBasicInfo = styled(Container)`
 
 const Box = styled.div`
 	display: flex;
+	padding-top: 1.2rem;
+	gap: 1.2rem;
 `;
 
 const InfoContainer = styled.div`
@@ -32,14 +34,16 @@ const CityNameInfo = styled.h2`
 const Precipitation = styled.div`
 	display: flex;
 	flex-direction: column;
-	font-size: 3.4rem;
+	font-size: 4.2rem;
 	font-weight: var(--font-weight-500);
-	padding: 1.2rem 1.2rem 1.2rem 0;
+	align-items: center;
+	justify-content: center;
 `;
 
 const Value = styled.span`
 	font-size: 1.6rem;
 	text-align: center;
+	width: 100%;
 `;
 
 const TemperatureInfo = styled.span`

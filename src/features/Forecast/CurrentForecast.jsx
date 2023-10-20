@@ -37,15 +37,13 @@ const CurrentForecast = ({ hoursDataList, hoursCount, variant }) => {
 	const countHours = hoursDataList.length;
 	const [leftIndex, setLeftIndex] = useState(left);
 
-	const currentDay = leftIndex >= 24 ? "Tomorrow" : "Today";
-
 	const onLeft = () => {
 		if (leftIndex - 1 < 0) return;
 		setLeftIndex(leftIndex - 1);
 	};
 
 	const onRight = () => {
-		if (leftIndex + 1 >= countHours) return;
+		if (leftIndex + hoursCount >= countHours) return;
 		setLeftIndex(leftIndex + 1);
 	};
 
@@ -68,12 +66,12 @@ const CurrentForecast = ({ hoursDataList, hoursCount, variant }) => {
 					<TbArrowLeft />
 				</MoveLeft>
 			)}
-			<ContainerName>{currentDay}&apos;s Forecast</ContainerName>
+			<ContainerName>Forecast</ContainerName>
 			<ForecastList
 				internalEls={internalElements}
 				orientation="horizontal"
 			/>
-			{leftIndex < 47 && (
+			{leftIndex + hoursCount < countHours && (
 				<MoveRight onClick={onRight}>
 					<TbArrowRight />
 				</MoveRight>

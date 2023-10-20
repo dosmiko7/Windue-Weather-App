@@ -45,8 +45,9 @@ export const formatForecast = (data) => {
 		tmpObj["day"] = convertDateIntoDayName(day.date);
 		tmpObj["condition"] = { icon: day.day.condition.icon, text: day.day.condition.text };
 		tmpObj["wind"] = day.day.avgvis_km;
-		tmpObj["rainProb"] = day.daily_chance_of_rain;
-		tmpObj["snowProb"] = day.daily_chance_of_snow;
+		tmpObj["rainProb"] = day.day.daily_chance_of_rain;
+		tmpObj["snowProb"] = day.day.daily_chance_of_snow;
+		tmpObj["temp"] = day.day.avgtemp_c;
 		day.hour.forEach((hour) => {
 			details.push({
 				time: hour.time.slice(-5),
