@@ -1,7 +1,6 @@
 import { styled } from "styled-components";
 import PropTypes from "prop-types";
 
-import ForecastElement from "./ForecastElement";
 import List from "../../ui/List";
 
 const StyledForecastList = styled(List)`
@@ -10,26 +9,42 @@ const StyledForecastList = styled(List)`
 	font-size: 1.6rem;
 `;
 
-// TODO: change key
-const ForecastList = ({ forecast, orientation }) => {
-	const elementOrientation = orientation === "vertical" ? "horizontal" : "vertical";
-
-	return (
-		<StyledForecastList orientation={orientation}>
-			{forecast.map((item) => (
-				<ForecastElement
-					key={Math.random()}
-					data={item}
-					elementType={elementOrientation}
-				/>
-			))}
-		</StyledForecastList>
-	);
+const ForecastList = ({ orientation, internalEls }) => {
+	return <StyledForecastList orientation={orientation}>{internalEls}</StyledForecastList>;
 };
 
 ForecastList.propTypes = {
-	forecast: PropTypes.array.isRequired,
 	orientation: PropTypes.string,
+	internalEls: PropTypes.node.isRequired,
 };
+
+/*
+<Modal>
+	<Modal.Open opens={`${forecast.day}`}>
+		<ForecastElement
+			key={Math.random()}
+			data={item}
+			elementType={elementOrientation}
+		/>
+	</Modal.Open>
+	<Modal.Window name={`${forecast.day}`}>
+		<ForecastDayDetails details={details} />
+	</Modal.Window>
+</Modal> 
+*/
+/*
+{forecast.map((item) => (
+				<Modal key={Math.random()}>
+					<Modal.Open opens={item.day}>
+						<ForecastElement
+							data={item}
+							elementType={elementOrientation}
+						/>
+					</Modal.Open>
+					<Modal.Window name={item.day}>
+						<ForecastDayDetails details={item.day} />
+					</Modal.Window>
+				</Modal>
+			))} */
 
 export default ForecastList;

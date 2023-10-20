@@ -8,6 +8,7 @@ import useWeather from "../../hooks/useWeather";
 import Container, { ContainerName } from "../../ui/Container";
 import ForecastList from "./ForecastList";
 import Button from "../../ui/Button";
+import ForecastElement from "./ForecastElement";
 import { getCurrentLeftIndex } from "../../utils/getCurrentLeftIndex";
 
 const StyledTodayForecast = styled(Container)`
@@ -50,6 +51,18 @@ const TodayForecast = ({ hoursCount, variant }) => {
 		setLeftIndex(leftIndex + 1);
 	};
 
+	const generateForecastComponents = () => {
+		return forecast.todayForecast.slice(leftIndex, leftIndex + hoursCount).map((item) => (
+			<ForecastElement
+				key={Math.random()}
+				data={item}
+				elementType="vertical"
+			/>
+		));
+	};
+
+	const internalElements = generateForecastComponents();
+
 	return (
 		<StyledTodayForecast variant={variant}>
 			{leftIndex > 0 && (
@@ -59,7 +72,7 @@ const TodayForecast = ({ hoursCount, variant }) => {
 			)}
 			<ContainerName>{currentDay}&apos;s Forecast</ContainerName>
 			<ForecastList
-				forecast={forecast.todayForecast.slice(leftIndex, leftIndex + hoursCount)}
+				internalEls={internalElements}
 				orientation="horizontal"
 			/>
 			{leftIndex < 47 && (
