@@ -6,6 +6,7 @@ import ForecastCondition from "./ForecastCondition";
 
 const Day = styled.span`
 	width: 30%;
+	margin-left: 1.6rem;
 `;
 
 const Wind = styled.span`
@@ -16,7 +17,7 @@ const Wind = styled.span`
 	width: 30%;
 `;
 
-const ForecastElementHorizontal = ({ data }) => {
+const ForecastElementHorizontal = ({ data, children }) => {
 	const { day, condition, wind } = data;
 	return (
 		<>
@@ -26,12 +27,14 @@ const ForecastElementHorizontal = ({ data }) => {
 				<TbWind />
 				{wind}km/h
 			</Wind>
+			{children}
 		</>
 	);
 };
 
 ForecastElementHorizontal.propTypes = {
 	data: PropTypes.object.isRequired,
+	children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
 };
 
 export default ForecastElementHorizontal;

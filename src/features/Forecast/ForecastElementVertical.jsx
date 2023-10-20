@@ -14,7 +14,7 @@ const Temperature = styled.span`
 	color: var(--font-color-2);
 `;
 
-const ForecastElementVertical = ({ data }) => {
+const ForecastElementVertical = ({ data, children }) => {
 	const { time, condition, temp } = data;
 
 	return (
@@ -22,12 +22,14 @@ const ForecastElementVertical = ({ data }) => {
 			<Time>{time}</Time>
 			<ForecastCondition condition={condition} />
 			<Temperature>{temp}&#8451;</Temperature>
+			{children}
 		</>
 	);
 };
 
 ForecastElementVertical.propTypes = {
 	data: PropTypes.object.isRequired,
+	children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
 };
 
 export default ForecastElementVertical;
