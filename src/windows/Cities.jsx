@@ -17,13 +17,16 @@ const Box = styled.div`
 `;
 
 const Cities = () => {
-	const { forecast } = useWeather();
-
+	const { forecast, updateForecast } = useWeather();
 	return (
 		<OutletLayout>
 			<Box>
 				<LatestSearches />
-				<Suggestions />
+				<Suggestions
+					lat={forecast.current.location.lat}
+					lng={forecast.current.location.lng}
+					updateForecast={updateForecast}
+				/>
 			</Box>
 
 			<Sidebar variant="nonColor">

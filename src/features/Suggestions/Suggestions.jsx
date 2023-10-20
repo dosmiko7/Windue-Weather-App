@@ -1,20 +1,19 @@
 import { useEffect, useState } from "react";
+import PropTypes from "prop-types";
 
 import Container, { ContainerName } from "../../ui/Container";
 import SuggestionsList from "./SuggestionsList";
-import useWeather from "../../hooks/useWeather";
 import getCities from "../../services/apiCities";
 import { formatCities } from "../../utils/formatData";
 import Spinner from "../../ui/Spinner";
 
-const Suggestions = () => {
+const Suggestions = ({ lat, lng, updateForecast }) => {
 	const [cities, setCities] = useState([]);
-	const { forecast, updateForecast } = useWeather();
-	const location = forecast.current.location;
 
 	useEffect(() => {
 		const fetchData = async () => {
 			try {
+				const location = { lat: lat, lng: lng };
 				const data = await getCities({ location });
 				const formattedData = formatCities(data);
 				setCities(formattedData);
@@ -24,7 +23,7 @@ const Suggestions = () => {
 		};
 
 		fetchData();
-	}, [location]);
+	}, [lat, lng]);
 
 	const handleOnSuggestionClick = (location) => {
 		const coordinates = `${location.lat},${location.lng}`;
@@ -45,6 +44,12 @@ const Suggestions = () => {
 			)}
 		</Container>
 	);
+};
+
+Suggestions.propTypes = {
+	lat: PropTypes.number,
+	lng: PropTypes.number,
+	updateForecast: PropTypes.func,
 };
 
 export default Suggestions;

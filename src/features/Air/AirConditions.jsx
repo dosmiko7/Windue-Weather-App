@@ -15,8 +15,8 @@ const StyledAirCondition = styled(Container)`
 
 const SeeMore = styled(Button)`
 	position: absolute;
-	right: 20px;
-	top: 20px;
+	right: 2rem;
+	top: 2rem;
 `;
 
 const AirCondition = () => {
