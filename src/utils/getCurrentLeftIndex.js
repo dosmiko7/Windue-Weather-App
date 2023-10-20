@@ -17,6 +17,7 @@ const getLeftIndex = (arr, middleEl, count = 3) => {
 	const distanceFromMid = Math.floor(count / 2);
 	if (middleEl - distanceFromMid <= 0) return 0;
 	const left = middleEl - distanceFromMid;
+	if (left + count >= arr.length) return arr.length - count - 1;
 	return left;
 };
 

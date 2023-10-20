@@ -18,33 +18,4 @@ ForecastList.propTypes = {
 	internalEls: PropTypes.node.isRequired,
 };
 
-/*
-<Modal>
-	<Modal.Open opens={`${forecast.day}`}>
-		<ForecastElement
-			key={Math.random()}
-			data={item}
-			elementType={elementOrientation}
-		/>
-	</Modal.Open>
-	<Modal.Window name={`${forecast.day}`}>
-		<ForecastDayDetails details={details} />
-	</Modal.Window>
-</Modal> 
-*/
-/*
-{forecast.map((item) => (
-				<Modal key={Math.random()}>
-					<Modal.Open opens={item.day}>
-						<ForecastElement
-							data={item}
-							elementType={elementOrientation}
-						/>
-					</Modal.Open>
-					<Modal.Window name={item.day}>
-						<ForecastDayDetails details={item.day} />
-					</Modal.Window>
-				</Modal>
-			))} */
-
 export default ForecastList;

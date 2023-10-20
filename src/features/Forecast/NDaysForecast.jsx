@@ -47,7 +47,7 @@ const NDaysForecast = ({ daysCount, variant }) => {
 					</Modal.Open>
 				</ForecastElement>
 				<Modal.Window name={item.day}>
-					<ForecastDayDetails details={item.day} />
+					<ForecastDayDetails day={item} />
 				</Modal.Window>
 			</StyledModal>
 		));

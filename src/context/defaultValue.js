@@ -20,7 +20,7 @@ export const defaultValue = {
 			lng: 21,
 		},
 	},
-	todayForecast: [
+	currentForecast: [
 		{
 			time: "06:00",
 			condition: {

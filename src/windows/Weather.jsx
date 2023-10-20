@@ -1,11 +1,12 @@
 import { styled } from "styled-components";
 
 import ForecastBasicInfo from "../features/Forecast/ForecastBasicInfo";
-import TodayForecast from "../features/Forecast/TodayForecast";
+import CurrentForecast from "../features/Forecast/CurrentForecast";
 import AirCondition from "../features/Air/AirConditions";
 import NDaysForecast from "../features/Forecast/NDaysForecast";
 import Sidebar from "../ui/Sidebar";
 import OutletLayout from "../ui/OutletLayout";
+import useWeather from "../hooks/useWeather";
 
 const Box = styled.div`
 	display: grid;
@@ -14,11 +15,16 @@ const Box = styled.div`
 `;
 
 const Weather = () => {
+	const { forecast } = useWeather();
+
 	return (
 		<OutletLayout>
 			<Box>
 				<ForecastBasicInfo />
-				<TodayForecast hoursCount={6} />
+				<CurrentForecast
+					hoursDataList={forecast.currentForecast}
+					hoursCount={6}
+				/>
 				<AirCondition />
 			</Box>
 			<Sidebar>

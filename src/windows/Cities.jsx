@@ -2,12 +2,13 @@ import { styled } from "styled-components";
 
 import LatestSearches from "../features/LatestSearches/LatestSearches";
 import ForecastBasicInfo from "../features/Forecast/ForecastBasicInfo";
-import TodayForecast from "../features/Forecast/TodayForecast";
+import CurrentForecast from "../features/Forecast/CurrentForecast";
 import NDaysForecast from "../features/Forecast/NDaysForecast";
 import Suggestions from "../features/Suggestions/Suggestions";
 import List from "../ui/List";
 import Sidebar from "../ui/Sidebar";
 import OutletLayout from "../ui/OutletLayout";
+import useWeather from "../hooks/useWeather";
 
 const Box = styled.div`
 	display: flex;
@@ -16,6 +17,8 @@ const Box = styled.div`
 `;
 
 const Cities = () => {
+	const { forecast } = useWeather();
+
 	return (
 		<OutletLayout>
 			<Box>
@@ -26,7 +29,8 @@ const Cities = () => {
 			<Sidebar variant="nonColor">
 				<List orientation="vertical">
 					<ForecastBasicInfo />
-					<TodayForecast
+					<CurrentForecast
+						hoursDataList={forecast.currentForecast}
 						hoursCount={3}
 						variant="nonColor"
 					/>

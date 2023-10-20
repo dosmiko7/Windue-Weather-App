@@ -20,12 +20,12 @@ export const formatForecast = (data) => {
 	};
 
 	const daysToExtract = [0, 1];
-	const todayForecast = [];
+	const currentForecast = [];
 	for (const day of daysToExtract) {
 		let dayData = data.forecast.forecastday[day].hour;
 		for (let hour = 0; hour < dayData.length; hour++) {
 			const hourData = dayData[hour];
-			todayForecast.push({
+			currentForecast.push({
 				day: hourData.time.slice(0, 10),
 				time: hourData.time.slice(-5),
 				condition: {
@@ -65,7 +65,7 @@ export const formatForecast = (data) => {
 		uv: data.current.uv,
 	};
 
-	return { current, todayForecast, nDayForecast, airCondition };
+	return { current, currentForecast, nDayForecast, airCondition };
 };
 
 export const formatSearch = (formattedData) => {

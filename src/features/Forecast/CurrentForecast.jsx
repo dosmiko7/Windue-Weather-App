@@ -3,15 +3,13 @@ import PropTypes from "prop-types";
 import { useState } from "react";
 import { TbArrowLeft, TbArrowRight } from "react-icons/tb";
 
-import useWeather from "../../hooks/useWeather";
-
 import Container, { ContainerName } from "../../ui/Container";
 import ForecastList from "./ForecastList";
 import Button from "../../ui/Button";
 import ForecastElement from "./ForecastElement";
 import { getCurrentLeftIndex } from "../../utils/getCurrentLeftIndex";
 
-const StyledTodayForecast = styled(Container)`
+const StyledCurrentForecast = styled(Container)`
 	position: relative;
 	padding: 2.4rem 1.6rem;
 	z-index: 0;
@@ -34,9 +32,9 @@ const MoveRight = styled(MoveButton)`
 	margin-right: 0.3rem;
 `;
 
-const TodayForecast = ({ hoursCount, variant }) => {
-	const { forecast } = useWeather();
-	const left = getCurrentLeftIndex(forecast.todayForecast, new Date(), hoursCount);
+const CurrentForecast = ({ hoursDataList, hoursCount, variant }) => {
+	const left = getCurrentLeftIndex(hoursDataList, new Date(), hoursCount);
+	const countHours = hoursDataList.length;
 	const [leftIndex, setLeftIndex] = useState(left);
 
 	const currentDay = leftIndex >= 24 ? "Tomorrow" : "Today";
@@ -47,12 +45,12 @@ const TodayForecast = ({ hoursCount, variant }) => {
 	};
 
 	const onRight = () => {
-		if (leftIndex + 1 > 47) return;
+		if (leftIndex + 1 >= countHours) return;
 		setLeftIndex(leftIndex + 1);
 	};
 
 	const generateForecastComponents = () => {
-		return forecast.todayForecast.slice(leftIndex, leftIndex + hoursCount).map((item) => (
+		return hoursDataList.slice(leftIndex, leftIndex + hoursCount).map((item) => (
 			<ForecastElement
 				key={Math.random()}
 				data={item}
@@ -64,7 +62,7 @@ const TodayForecast = ({ hoursCount, variant }) => {
 	const internalElements = generateForecastComponents();
 
 	return (
-		<StyledTodayForecast variant={variant}>
+		<StyledCurrentForecast variant={variant}>
 			{leftIndex > 0 && (
 				<MoveLeft onClick={onLeft}>
 					<TbArrowLeft />
@@ -80,15 +78,14 @@ const TodayForecast = ({ hoursCount, variant }) => {
 					<TbArrowRight />
 				</MoveRight>
 			)}
-		</StyledTodayForecast>
+		</StyledCurrentForecast>
 	);
 };
 
-TodayForecast.propTypes = {
+CurrentForecast.propTypes = {
+	hoursDataList: PropTypes.array.isRequired,
 	hoursCount: PropTypes.number.isRequired,
 	variant: PropTypes.string,
 };
-/* 
 
-			*/
-export default TodayForecast;
+export default CurrentForecast;
