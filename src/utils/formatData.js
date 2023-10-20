@@ -1,9 +1,11 @@
 import convertDateIntoDayName from "./convertDateIntoDayName";
 
 export const formatForecast = (data) => {
+	console.log(data);
 	const current = {
 		cityName: data.location.name,
 		rainProb: data.forecast.forecastday[0].day.daily_chance_of_rain,
+		snowProb: data.forecast.forecastday[1].day.daily_chance_of_snow,
 		temp: data.current.temp_c,
 		condition: { icon: data.current.condition.icon, text: data.current.condition.text },
 		details: {
@@ -37,11 +39,23 @@ export const formatForecast = (data) => {
 
 	const nDayForecast = [];
 	data.forecast.forecastday.forEach((day) => {
-		nDayForecast.push({
-			day: convertDateIntoDayName(day.date),
-			condition: { icon: day.day.condition.icon, text: day.day.condition.text },
-			wind: day.day.avgvis_km,
+		let details = [];
+		let tmpObj = {};
+
+		tmpObj["day"] = convertDateIntoDayName(day.date);
+		tmpObj["condition"] = { icon: day.day.condition.icon, text: day.day.condition.text };
+		tmpObj["wind"] = day.day.avgvis_km;
+		tmpObj["rainProb"] = day.daily_chance_of_rain;
+		tmpObj["snowProb"] = day.daily_chance_of_snow;
+		day.hour.forEach((hour) => {
+			details.push({
+				time: hour.time.slice(-5),
+				condition: { icon: hour.condition.icon, text: hour.condition.text },
+				temp: hour.temp_c,
+			});
 		});
+
+		nDayForecast.push({ ...tmpObj, details: details });
 	});
 
 	const airCondition = {
