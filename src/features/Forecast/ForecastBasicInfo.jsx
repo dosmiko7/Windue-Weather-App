@@ -48,7 +48,7 @@ const Value = styled.span`
 
 const TemperatureInfo = styled.span`
 	color: var(--font-color-2);
-	font-size: 4.2rem;
+	font-size: 3.6rem;
 	font-weight: var(--font-weight-700);
 	text-align: end;
 `;
