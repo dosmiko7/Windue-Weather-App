@@ -1,4 +1,5 @@
 import { styled } from "styled-components";
+import { GiRaining, GiSnowing } from "react-icons/gi";
 
 import useWeather from "../../hooks/useWeather";
 
@@ -10,19 +11,35 @@ const StyledBasicInfo = styled(Container)`
 	padding: 1.6rem;
 `;
 
+const Box = styled.div`
+	display: flex;
+`;
+
 const InfoContainer = styled.div`
-	width: 50%;
+	width: 75%;
 	display: flex;
 	flex-direction: column;
+
+	&:nth-child(2) {
+		width: 25%;
+	}
 `;
 
 const CityNameInfo = styled.h2`
 	color: var(--font-color-2);
 `;
 
-const RainInfo = styled.h5`
+const Precipitation = styled.div`
+	display: flex;
+	flex-direction: column;
+	font-size: 3.4rem;
 	font-weight: var(--font-weight-500);
-	padding: 1.2rem 0;
+	padding: 1.2rem 1.2rem 1.2rem 0;
+`;
+
+const Value = styled.span`
+	font-size: 1.6rem;
+	text-align: center;
 `;
 
 const TemperatureInfo = styled.span`
@@ -45,13 +62,22 @@ const Image = styled.img`
 
 const ForecastBasicInfo = () => {
 	const { forecast } = useWeather();
-	const { cityName, rainProb, temp, condition } = forecast.current;
+	const { cityName, rainProb, snowProb, temp, condition } = forecast.current;
 
 	return (
 		<StyledBasicInfo>
 			<InfoContainer>
 				<CityNameInfo>{cityName}</CityNameInfo>
-				<RainInfo>Chance of rain: {rainProb}%</RainInfo>
+				<Box>
+					<Precipitation>
+						<GiRaining />
+						<Value>{rainProb}%</Value>
+					</Precipitation>
+					<Precipitation>
+						<GiSnowing />
+						<Value>{snowProb}%</Value>
+					</Precipitation>
+				</Box>
 			</InfoContainer>
 			<InfoContainer>
 				<ImageContainer>
