@@ -7,6 +7,11 @@ const Window = styled.div`
 	margin: 30px auto;
 	padding: 2.2rem;
 	background: var(--background-app-1);
+
+	@media only screen and (width <= 1280px) {
+		width: 140rem;
+		height: 160rem;
+	}
 `;
 
 export default Window;

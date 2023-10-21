@@ -49,6 +49,14 @@ export const GlobalStyles = createGlobalStyle`
 html {
 	font-size: 62.5%;
   background-color: rgba(100,100,100);
+
+  @media only screen and (width <= 1600px){
+    font-size: 54.5%;
+  }
+
+  @media only screen and (width <= 1400px){
+    font-size: 50%;
+  }
 }
 
 body {
@@ -58,6 +66,30 @@ body {
 
 ul {
   list-style: none;
+}
+
+h1 {
+  font-size: 4rem;
+}
+
+h2 {
+  font-size: 3.6rem;
+}
+
+h3 {
+  font-size: 3.2rem;
+}
+
+h4 {
+  font-size: 2.8rem;
+}
+
+h5 {
+  font-size: 2.4rem;
+}
+
+h5 {
+  font-size: 1.6rem;
 }
 
 input {

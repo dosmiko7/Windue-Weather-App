@@ -7,6 +7,13 @@ const StyledMainNav = styled.ul`
 	display: flex;
 	flex-direction: column;
 	gap: 3.4rem;
+
+	@media only screen and (width <= 1280px) {
+		flex-direction: row;
+		justify-content: space-between;
+		width: 30%;
+		gap: 0;
+	}
 `;
 
 const MainNav = () => {

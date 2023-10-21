@@ -22,6 +22,10 @@ const StyledToggleButton = styled(Button)`
 		transform: ${(props) => (props.isdarktheme === "no" ? "translate(-100%)" : "translate(100%)")};
 		transition: transform 0.4s ease;
 	}
+
+	@media only screen and (width <= 1280px) {
+		width: 8rem;
+	}
 `;
 
 const Flex = styled.div`

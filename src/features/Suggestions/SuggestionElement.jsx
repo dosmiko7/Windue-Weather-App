@@ -16,7 +16,7 @@ const StyledSuggestionElement = styled(ListElement)`
 		cursor: pointer;
 	}
 `;
-const CityName = styled.h4`
+const CityName = styled.h5`
 	color: var(--font-color-2);
 	text-align: center;
 `;

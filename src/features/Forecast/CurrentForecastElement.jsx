@@ -2,6 +2,7 @@ import { styled } from "styled-components";
 import PropTypes from "prop-types";
 
 import ForecastCondition from "./ForecastCondition";
+import ListElement from "../../ui/ListElement";
 
 const Time = styled.span`
 	text-transform: uppercase;
@@ -14,22 +15,23 @@ const Temperature = styled.span`
 	color: var(--font-color-2);
 `;
 
-const ForecastElementVertical = ({ data, children }) => {
+const CurrentForecastElement = ({ data, children, orientation }) => {
 	const { time, condition, temp } = data;
 
 	return (
-		<>
+		<ListElement orientation={orientation}>
 			<Time>{time}</Time>
 			<ForecastCondition condition={condition} />
 			<Temperature>{temp}&#8451;</Temperature>
 			{children}
-		</>
+		</ListElement>
 	);
 };
 
-ForecastElementVertical.propTypes = {
+CurrentForecastElement.propTypes = {
 	data: PropTypes.object.isRequired,
 	children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
+	orientation: PropTypes.string,
 };
 
-export default ForecastElementVertical;
+export default CurrentForecastElement;

@@ -13,7 +13,6 @@ const SearchBox = styled(Container)`
 	display: flex;
 	align-items: center;
 	padding: 0.4rem 1rem;
-	margin-bottom: 1.2rem;
 	border: 1px solid;
 	border-color: ${(props) => (props.error === "true" ? "red" : "transparent")};
 `;

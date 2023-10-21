@@ -6,7 +6,7 @@ import { TbArrowLeft, TbArrowRight } from "react-icons/tb";
 import Container, { ContainerName } from "../../ui/Container";
 import ForecastList from "./ForecastList";
 import Button from "../../ui/Button";
-import ForecastElement from "./ForecastElement";
+import CurrentForecastElement from "./CurrentForecastElement";
 import { getCurrentLeftIndex } from "../../utils/getCurrentLeftIndex";
 
 const StyledCurrentForecast = styled(Container)`
@@ -49,15 +49,13 @@ const CurrentForecast = ({ hoursDataList, hoursCount, variant }) => {
 
 	const generateForecastComponents = () => {
 		return hoursDataList.slice(leftIndex, leftIndex + hoursCount).map((item) => (
-			<ForecastElement
+			<CurrentForecastElement
 				key={Math.random()}
 				data={item}
-				elementType="vertical"
+				orientation="vertical"
 			/>
 		));
 	};
-
-	const internalElements = generateForecastComponents();
 
 	return (
 		<StyledCurrentForecast variant={variant}>
@@ -68,7 +66,7 @@ const CurrentForecast = ({ hoursDataList, hoursCount, variant }) => {
 			)}
 			<ContainerName>Forecast</ContainerName>
 			<ForecastList
-				internalEls={internalElements}
+				internalEls={generateForecastComponents()}
 				orientation="horizontal"
 			/>
 			{leftIndex + hoursCount < countHours && (

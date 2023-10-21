@@ -4,7 +4,7 @@ import { TbArrowBarLeft } from "react-icons/tb";
 
 import Container, { ContainerName } from "../../ui/Container";
 import ForecastList from "./ForecastList";
-import ForecastElement from "./ForecastElement";
+import NDaysForecastElement from "../Forecast/NDaysForecastElement";
 import ForecastDayDetails from "./ForecastDayDetails";
 import Modal from "../../ui/Modal";
 import Button from "../../ui/Button";
@@ -17,6 +17,12 @@ const StyledButton = styled(Button)`
 	top: 50%;
 	transform: translateY(-50%);
 	color: var(--font-color-2);
+
+	@media only screen and (width <= 1280px) {
+		left: 50%;
+		top: 0;
+		transform: translateY(0) translateX(-50%);
+	}
 `;
 
 const StyledNDaysForecast = styled(Container)`
@@ -28,19 +34,21 @@ const StyledModal = styled(Modal)`
 `;
 
 const NDaysForecast = ({ nDayForecast, daysCount, variant }) => {
+	const mediumResolution = window.innerWidth <= 1280;
+
 	const generateForecastComponents = () => {
 		return nDayForecast.slice(0, daysCount).map((item) => (
 			<StyledModal key={Math.random()}>
-				<ForecastElement
+				<NDaysForecastElement
 					data={item}
-					elementType="horizontal"
+					orientation={mediumResolution ? "vertical" : "horizontal"}
 				>
 					<Modal.Open opens={item.day}>
 						<StyledButton>
 							<TbArrowBarLeft />
 						</StyledButton>
 					</Modal.Open>
-				</ForecastElement>
+				</NDaysForecastElement>
 				<Modal.Window name={item.day}>
 					<ForecastDayDetails day={item} />
 				</Modal.Window>
@@ -48,14 +56,12 @@ const NDaysForecast = ({ nDayForecast, daysCount, variant }) => {
 		));
 	};
 
-	const internalElements = generateForecastComponents();
-
 	return (
 		<StyledNDaysForecast variant={variant}>
 			<ContainerName>{daysCount}-Day Forecast</ContainerName>
 			<ForecastList
-				internalEls={internalElements}
-				orientation="vertical"
+				internalEls={generateForecastComponents()}
+				orientation={mediumResolution ? "horizontal" : "vertical"}
 			/>
 		</StyledNDaysForecast>
 	);
