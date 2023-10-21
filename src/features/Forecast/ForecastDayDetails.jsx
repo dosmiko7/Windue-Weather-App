@@ -34,12 +34,17 @@ const Wind = styled(Flex)`
 
 const Box = styled(Flex)`
 	gap: 1.6rem;
+	justify-content: end;
 `;
 
 const Details = styled(Container)`
 	display: flex;
 	justify-content: space-between;
 	padding: 1.6rem;
+
+	& > * {
+		width: 33%;
+	}
 `;
 
 const ConditionContainer = styled(Flex)`
