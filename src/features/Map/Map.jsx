@@ -1,8 +1,7 @@
 import { MapContainer, TileLayer } from "react-leaflet";
 import { useEffect, useRef, useState } from "react";
 import { styled } from "styled-components";
-
-import useWeather from "../../hooks/useWeather";
+import PropTypes from "prop-types";
 
 import Container from "../../ui/Container";
 import ChangeMapView from "./ChangeMapView";
@@ -18,12 +17,11 @@ const StyledMapContainer = styled(MapContainer)`
 	z-index: 2;
 `;
 
-const Map = () => {
-	const { forecast, updateForecast } = useWeather();
+const Map = ({ forecastCurrent, updateForecast }) => {
 	const [zoom, setZoom] = useState(9);
 	const [layer, setLayer] = useState("default");
 	const mapRef = useRef();
-	const { location, cityName, condition, temp } = forecast.current;
+	const { location, cityName, condition, temp } = forecastCurrent;
 
 	useEffect(() => {
 		if (mapRef.current) {
@@ -65,6 +63,11 @@ const Map = () => {
 			</StyledMapContainer>
 		</StyledMap>
 	);
+};
+
+Map.propTypes = {
+	forecastCurrent: PropTypes.object.isRequired,
+	updateForecast: PropTypes.func.isRequired,
 };
 
 export default Map;

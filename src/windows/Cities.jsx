@@ -17,11 +17,11 @@ const Box = styled.div`
 `;
 
 const Cities = () => {
-	const { forecast, updateForecast } = useWeather();
+	const { forecast, searchHistory, updateForecast } = useWeather();
 	return (
 		<OutletLayout>
 			<Box>
-				<LatestSearches />
+				<LatestSearches searchHistory={searchHistory} />
 				<Suggestions
 					lat={forecast.current.location.lat}
 					lng={forecast.current.location.lng}
@@ -31,13 +31,14 @@ const Cities = () => {
 
 			<Sidebar variant="nonColor">
 				<List orientation="vertical">
-					<ForecastBasicInfo />
+					<ForecastBasicInfo forecastCurrent={forecast.current} />
 					<CurrentForecast
 						hoursDataList={forecast.currentForecast}
 						hoursCount={3}
 						variant="nonColor"
 					/>
 					<NDaysForecast
+						nDayForecast={forecast.nDayForecast}
 						daysCount={2}
 						variant="nonColor"
 					/>

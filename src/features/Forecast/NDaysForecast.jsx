@@ -2,8 +2,6 @@ import PropTypes from "prop-types";
 import { styled } from "styled-components";
 import { TbArrowBarLeft } from "react-icons/tb";
 
-import useWeather from "../../hooks/useWeather";
-
 import Container, { ContainerName } from "../../ui/Container";
 import ForecastList from "./ForecastList";
 import ForecastElement from "./ForecastElement";
@@ -29,10 +27,7 @@ const StyledModal = styled(Modal)`
 	position: relative;
 `;
 
-const NDaysForecast = ({ daysCount, variant }) => {
-	const { forecast } = useWeather();
-	const nDayForecast = forecast.nDayForecast;
-
+const NDaysForecast = ({ nDayForecast, daysCount, variant }) => {
 	const generateForecastComponents = () => {
 		return nDayForecast.slice(0, daysCount).map((item) => (
 			<StyledModal key={Math.random()}>
@@ -67,6 +62,7 @@ const NDaysForecast = ({ daysCount, variant }) => {
 };
 
 NDaysForecast.propTypes = {
+	nDayForecast: PropTypes.array.isRequired,
 	daysCount: PropTypes.number.isRequired,
 	variant: PropTypes.string,
 };

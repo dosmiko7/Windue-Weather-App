@@ -1,7 +1,6 @@
 import { styled } from "styled-components";
 import { GiRaining, GiSnowing } from "react-icons/gi";
-
-import useWeather from "../../hooks/useWeather";
+import PropTypes from "prop-types";
 
 import Container from "../../ui/Container";
 
@@ -64,9 +63,8 @@ const Image = styled.img`
 	width: auto;
 `;
 
-const ForecastBasicInfo = () => {
-	const { forecast } = useWeather();
-	const { cityName, rainProb, snowProb, temp, condition } = forecast.current;
+const ForecastBasicInfo = ({ forecastCurrent }) => {
+	const { cityName, rainProb, snowProb, temp, condition } = forecastCurrent;
 
 	return (
 		<StyledBasicInfo>
@@ -94,6 +92,10 @@ const ForecastBasicInfo = () => {
 			</InfoContainer>
 		</StyledBasicInfo>
 	);
+};
+
+ForecastBasicInfo.propTypes = {
+	forecastCurrent: PropTypes.object.isRequired,
 };
 
 export default ForecastBasicInfo;

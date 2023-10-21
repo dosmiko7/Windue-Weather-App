@@ -20,15 +20,18 @@ const Weather = () => {
 	return (
 		<OutletLayout>
 			<Box>
-				<ForecastBasicInfo />
+				<ForecastBasicInfo forecastCurrent={forecast.current} />
 				<CurrentForecast
 					hoursDataList={forecast.currentForecast}
 					hoursCount={6}
 				/>
-				<AirCondition />
+				<AirCondition forecast={forecast} />
 			</Box>
 			<Sidebar>
-				<NDaysForecast daysCount={3} />
+				<NDaysForecast
+					nDayForecast={forecast.nDayForecast}
+					daysCount={3}
+				/>
 			</Sidebar>
 		</OutletLayout>
 	);

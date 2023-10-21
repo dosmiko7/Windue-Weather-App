@@ -1,6 +1,5 @@
 import { styled } from "styled-components";
-
-import useWeather from "../../hooks/useWeather";
+import PropTypes from "prop-types";
 
 import Container, { ContainerName } from "../../ui/Container";
 import AirGrid from "./AirGrid";
@@ -19,8 +18,7 @@ const SeeMore = styled(Button)`
 	top: 2rem;
 `;
 
-const AirCondition = () => {
-	const { forecast } = useWeather();
+const AirCondition = ({ forecast }) => {
 	const airCondition = forecast.airCondition;
 	const details = forecast.current.details;
 
@@ -38,6 +36,10 @@ const AirCondition = () => {
 			</Modal>
 		</StyledAirCondition>
 	);
+};
+
+AirCondition.propTypes = {
+	forecast: PropTypes.object.isRequired,
 };
 
 export default AirCondition;
