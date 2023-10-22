@@ -6,7 +6,11 @@ import ForecastCondition from "./ForecastCondition";
 import ListElement from "../../ui/ListElement";
 
 const Box = styled.span`
-	font-size: 1.6rem;
+	font-size: 1.8rem;
+
+	@media only screen and (width <= 1280px) {
+		font-size: 2.6rem;
+	}
 `;
 
 const Day = styled(Box)`
@@ -20,14 +24,15 @@ const Day = styled(Box)`
 `;
 
 const Wind = styled(Box)`
-	font-size: 1.8rem;
 	display: flex;
 	align-items: center;
 	justify-content: flex-end;
 	width: 30%;
+	gap: 0.2rem;
 
 	@media only screen and (width <= 1280px) {
 		justify-content: center;
+		padding-bottom: 1.2rem;
 	}
 `;
 

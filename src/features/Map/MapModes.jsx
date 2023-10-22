@@ -7,15 +7,17 @@ import Button from "../../ui/Button";
 
 const StyledMapModes = styled.div`
 	position: absolute;
-	right: 0;
+	bottom: 0;
+	left: 0;
+	max-width: 80%;
 
 	background: var(--background-app-1);
 	color: var(--font-color-2);
-	border-radius: 0 0 0 20px;
+	border-radius: 0 20px 0 0;
 	z-index: 10;
 
-	& ul button:first-child {
-		border-radius: 0 0 0 20px;
+	& ul button:last-child {
+		border-radius: 0 20px 0 0;
 	}
 `;
 
@@ -23,6 +25,16 @@ const MapButton = styled(Button)`
 	padding: 0.4rem 0;
 	font-size: 2rem;
 	border-radius: 0;
+
+	@media only screen and (width <= 1280px) {
+		padding: 0.6rem 6.4rem;
+		font-size: 3.8rem;
+	}
+
+	@media only screen and (width <= 950px) {
+		padding: 0.6rem 4.2rem;
+		font-size: 3.8rem;
+	}
 `;
 
 const MapModes = ({ onLayerChange }) => {

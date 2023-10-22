@@ -6,6 +6,11 @@ import SuggestionsList from "./SuggestionsList";
 import getCities from "../../services/apiCities";
 import { formatCities } from "../../utils/formatData";
 import Spinner from "../../ui/Spinner";
+import { styled } from "styled-components";
+
+const Info = styled.h3`
+	margin-left: 0.6rem;
+`;
 
 const Suggestions = ({ lat, lng, updateForecast }) => {
 	const [cities, setCities] = useState([]);
@@ -33,12 +38,14 @@ const Suggestions = ({ lat, lng, updateForecast }) => {
 	return (
 		<Container variant="nonColor">
 			<ContainerName>Suggestions</ContainerName>
-			{cities ? (
+			{cities.length !== 0 ? (
 				<SuggestionsList
 					suggestions={cities}
 					orientation="horizontal"
 					onSuggestionClick={handleOnSuggestionClick}
 				/>
+			) : cities ? (
+				<Info>No nearby places found</Info>
 			) : (
 				<Spinner />
 			)}

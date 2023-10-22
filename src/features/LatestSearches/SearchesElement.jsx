@@ -9,6 +9,16 @@ const StyledSearchesElement = styled(ListElement)`
 	padding-top: 2.6rem;
 	padding-bottom: 2.6rem;
 	border-radius: 20px;
+	flex-grow: 0;
+
+	@media only screen and (width <= 1280px) {
+		width: 20%;
+	}
+
+	@media only screen and (width <= 950px) {
+		padding: 2.6rem 0.6rem;
+		width: 25%;
+	}
 `;
 
 const Box = styled.div`
@@ -16,10 +26,15 @@ const Box = styled.div`
 	flex-direction: column;
 	justify-content: space-between;
 	padding-left: 2.6rem;
+
+	@media only screen and (width <= 1280px) {
+		padding-left: 0;
+	}
 `;
 
 const CityName = styled.h4`
 	color: var(--font-color-2);
+	text-align: center;
 `;
 
 const Time = styled.span`
@@ -30,13 +45,18 @@ const Temperature = styled.span`
 	margin-left: auto;
 	font-size: 3.2rem;
 	color: var(--font-color-2);
+
+	@media only screen and (width <= 1280px) {
+		margin-left: 0;
+	}
 `;
 
-const SearchesElement = ({ search }) => {
+const SearchesElement = ({ search, orientation }) => {
 	const { cityName, condition, time, temp } = search;
+	const elOrientation = orientation === "horizontal" ? "vertical" : "horizontal";
 
 	return (
-		<StyledSearchesElement orientation="horizontal">
+		<StyledSearchesElement orientation={elOrientation}>
 			<ForecastCondition condition={condition} />
 			<Box>
 				<CityName>{cityName}</CityName>
@@ -49,6 +69,7 @@ const SearchesElement = ({ search }) => {
 
 SearchesElement.propTypes = {
 	search: PropTypes.object.isRequired,
+	orientation: PropTypes.string,
 };
 
 export default SearchesElement;

@@ -2,10 +2,15 @@ import PropTypes from "prop-types";
 
 import List from "../../ui/List";
 import SearchesElement from "./SearchesElement";
+import { styled } from "styled-components";
+
+const StyledLatestSearchesList = styled(List)`
+	gap: 0.6rem;
+`;
 
 const LatestSearchesList = ({ searches, orientation }) => {
 	return (
-		<List
+		<StyledLatestSearchesList
 			orientation={orientation}
 			border="nonBorder"
 		>
@@ -13,9 +18,10 @@ const LatestSearchesList = ({ searches, orientation }) => {
 				<SearchesElement
 					key={Math.random()}
 					search={search}
+					orientation={orientation}
 				/>
 			))}
-		</List>
+		</StyledLatestSearchesList>
 	);
 };
 

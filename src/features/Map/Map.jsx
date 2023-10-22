@@ -11,6 +11,7 @@ import MapModes from "./MapModes";
 
 const StyledMap = styled(Container)`
 	position: relative;
+	padding-bottom: 0;
 `;
 
 const StyledMapContainer = styled(MapContainer)`

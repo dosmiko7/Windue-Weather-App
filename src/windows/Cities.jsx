@@ -14,6 +14,7 @@ const Box = styled.div`
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
+	row-gap: 2.6rem;
 `;
 
 const Cities = () => {

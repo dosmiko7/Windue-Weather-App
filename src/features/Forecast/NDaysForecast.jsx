@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import { styled } from "styled-components";
-import { TbArrowBarLeft } from "react-icons/tb";
+import { CiCircleMore } from "react-icons/ci";
 
 import Container, { ContainerName } from "../../ui/Container";
 import ForecastList from "./ForecastList";
@@ -10,7 +10,7 @@ import Modal from "../../ui/Modal";
 import Button from "../../ui/Button";
 
 const StyledButton = styled(Button)`
-	width: 2.2rem;
+	width: auto;
 	font-size: 2.4rem;
 	position: absolute;
 	left: 0;
@@ -19,9 +19,10 @@ const StyledButton = styled(Button)`
 	color: var(--font-color-2);
 
 	@media only screen and (width <= 1280px) {
-		left: 50%;
-		top: 0;
-		transform: translateY(0) translateX(-50%);
+		left: 20%;
+		top: 50%;
+		transform: translateY(-50%) translateX(-50%);
+		font-size: 3.8rem;
 	}
 `;
 
@@ -45,7 +46,7 @@ const NDaysForecast = ({ nDayForecast, daysCount, variant }) => {
 				>
 					<Modal.Open opens={item.day}>
 						<StyledButton>
-							<TbArrowBarLeft />
+							<CiCircleMore />
 						</StyledButton>
 					</Modal.Open>
 				</NDaysForecastElement>

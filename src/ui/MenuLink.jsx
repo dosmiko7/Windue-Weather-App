@@ -7,6 +7,7 @@ import Button from "./Button";
 const StyledButton = styled(Button)`
 	font-size: 2.4rem;
 	display: flex;
+	width: 8.2rem;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
@@ -17,7 +18,7 @@ const OptionName = styled.span`
 	font-weight: var(--font-weight-700);
 
 	@media only screen and (width <= 1280px) {
-		font-size: 1.6rem;
+		font-size: 1.8rem;
 	}
 `;
 

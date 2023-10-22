@@ -16,6 +16,7 @@ const Box = styled.div`
 
 const Weather = () => {
 	const { forecast } = useWeather();
+	const smallResolution = window.innerWidth <= 950;
 
 	return (
 		<OutletLayout>
@@ -23,7 +24,7 @@ const Weather = () => {
 				<ForecastBasicInfo forecastCurrent={forecast.current} />
 				<CurrentForecast
 					hoursDataList={forecast.currentForecast}
-					hoursCount={6}
+					hoursCount={smallResolution ? 5 : 6}
 				/>
 				<AirCondition forecast={forecast} />
 			</Box>

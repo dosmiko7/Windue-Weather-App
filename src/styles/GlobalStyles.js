@@ -57,6 +57,22 @@ html {
   @media only screen and (width <= 1400px){
     font-size: 50%;
   }
+
+  @media only screen and (width <= 1280px) {
+    font-size: 46%;
+  }
+
+  @media only screen and (width <= 1040px) {
+    font-size: 42%;
+  }
+
+  @media only screen and (width <= 565px) {
+    font-size: 38%;
+  }
+
+  @media only screen and (width <= 400px) {
+    font-size: 34%;
+  }
 }
 
 body {
@@ -77,18 +93,18 @@ h2 {
 }
 
 h3 {
-  font-size: 3.2rem;
+  font-size: 2.6rem;
 }
 
 h4 {
-  font-size: 2.8rem;
+  font-size: 2.4rem;
 }
 
 h5 {
   font-size: 2.4rem;
 }
 
-h5 {
+h6 {
   font-size: 1.6rem;
 }
 

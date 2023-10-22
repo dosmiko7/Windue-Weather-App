@@ -9,6 +9,7 @@ const StyledSuggestionElement = styled(ListElement)`
 	padding: 2.4rem 3.6rem;
 	gap: 1.2rem;
 	flex: 0;
+	max-height: 75%;
 	transition: all 0.3s;
 
 	&:hover {
@@ -16,7 +17,7 @@ const StyledSuggestionElement = styled(ListElement)`
 		cursor: pointer;
 	}
 `;
-const CityName = styled.h5`
+const CityName = styled.h3`
 	color: var(--font-color-2);
 	text-align: center;
 `;

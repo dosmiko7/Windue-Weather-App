@@ -26,6 +26,10 @@ const SearchButton = styled(Button)`
 		color: var(--font-color-2);
 		background-color: var(--background-color-2);
 	}
+
+	@media only screen and (width <= 1280px) {
+		font-size: 2.4rem;
+	}
 `;
 
 const Search = () => {

@@ -14,6 +14,11 @@ const StyledMainNav = styled.ul`
 		width: 30%;
 		gap: 0;
 	}
+
+	@media only screen and (width <= 950px) {
+		width: 50%;
+		gap: 3.4rem;
+	}
 `;
 
 const MainNav = () => {

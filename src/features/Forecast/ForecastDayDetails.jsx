@@ -16,6 +16,11 @@ const StyledDetails = styled(Container)`
 	justify-content: space-between;
 	width: 70rem;
 	height: 50rem;
+
+	@media only screen and (width <= 615px) {
+		width: 50rem;
+		height: 40rem;
+	}
 `;
 
 const NameContainer = styled(Flex)`
@@ -82,6 +87,7 @@ const TemperatureInfo = styled.span`
 `;
 
 const ForecastDayDetails = ({ day }) => {
+	const smallResolution = window.innerWidth <= 950;
 	return (
 		<StyledDetails>
 			<Details>
@@ -114,7 +120,7 @@ const ForecastDayDetails = ({ day }) => {
 			<Container>
 				<CurrentForecast
 					hoursDataList={day.details}
-					hoursCount={4}
+					hoursCount={smallResolution ? 3 : 4}
 				/>
 			</Container>
 		</StyledDetails>

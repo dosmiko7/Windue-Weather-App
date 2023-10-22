@@ -17,6 +17,10 @@ const Info = styled.div`
 
 const InfoTitle = styled.h5`
 	font-weight: var(--font-weight-400);
+
+	@media only screen and (width <= 1280px) {
+		font-size: 2.2rem;
+	}
 `;
 
 const InfoData = styled.span`

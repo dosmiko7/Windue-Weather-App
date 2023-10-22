@@ -34,6 +34,9 @@ const CloseButton = styled(Button)`
 	position: absolute;
 	top: 0;
 	right: 0;
+	width: 4.8rem;
+	height: 4.8rem;
+	font-size: 3.2rem;
 	transform: translate(50%, -50%);
 	transition: all 0.3s;
 `;

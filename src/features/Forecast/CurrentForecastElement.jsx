@@ -7,6 +7,10 @@ import ListElement from "../../ui/ListElement";
 const Time = styled.span`
 	text-transform: uppercase;
 	font-weight: var(--font-weight-500);
+
+	@media only screen and (width <= 1280px) {
+		font-size: 2.2rem;
+	}
 `;
 
 const Temperature = styled.span`
