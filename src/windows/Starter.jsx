@@ -9,6 +9,13 @@ const StyledStarter = styled(Window)`
 	display: flex;
 	padding: 3.2rem;
 	gap: 2rem;
+
+	@media only screen and (width <= 1280px) {
+		margin: 0;
+		height: 100vh;
+		width: 100vw;
+		flex-direction: column;
+	}
 `;
 
 const ImageContainer = styled(Container)`
@@ -16,6 +23,10 @@ const ImageContainer = styled(Container)`
 	align-items: center;
 	justify-content: center;
 	width: 100%;
+
+	@media only screen and (width <= 1280px) {
+		height: 50%;
+	}
 `;
 const Image = styled.img`
 	height: 100%;
@@ -29,9 +40,14 @@ const MessageContainer = styled(Container)`
 	justify-content: center;
 	width: 100%;
 	background-color: inherit;
+
+	@media only screen and (width <= 1280px) {
+		font-size: 6.4rem;
+	}
 `;
 
 const Title = styled.h1`
+	font-size: inherit;
 	margin-top: 1.6rem;
 `;
 
@@ -40,6 +56,10 @@ const Subtitle = styled.h3`
 	font-size: 1.8rem;
 	margin-top: 1.6rem;
 	margin-bottom: 4.8rem;
+
+	@media only screen and (width <= 1280px) {
+		font-size: 3.2rem;
+	}
 `;
 
 const StarterButton = styled(Button)`
