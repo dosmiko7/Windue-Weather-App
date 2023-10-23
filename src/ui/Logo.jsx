@@ -1,5 +1,7 @@
 import { css, styled } from "styled-components";
 import PropTypes from "prop-types";
+import { FlexRow } from "./Flex";
+import Image from "./Image";
 
 const variants = {
 	normal: css`
@@ -13,9 +15,8 @@ const variants = {
 	`,
 };
 
-const StyledLogo = styled.div`
+const LogoContainer = styled(FlexRow)`
 	background-color: var(--background-color-2);
-	display: flex;
 	align-items: center;
 	justify-content: center;
 	border-radius: 20%;
@@ -23,19 +24,19 @@ const StyledLogo = styled.div`
 	${(props) => variants[props.variant]}
 `;
 
-const Image = styled.img`
+const LogoImage = styled(Image)`
 	height: 100%;
 	width: auto;
 `;
 
 const Logo = ({ variant }) => {
 	return (
-		<StyledLogo variant={variant}>
-			<Image
+		<LogoContainer variant={variant}>
+			<LogoImage
 				src="/logo.png"
 				alt="logo"
 			/>
-		</StyledLogo>
+		</LogoContainer>
 	);
 };
 
@@ -43,7 +44,7 @@ Logo.propTypes = {
 	variant: PropTypes.string,
 };
 
-StyledLogo.defaultProps = {
+LogoContainer.defaultProps = {
 	variant: "normal",
 };
 

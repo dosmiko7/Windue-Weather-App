@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 
 import ListElement from "../../ui/ListElement";
 import ForecastCondition from "../Forecast/ForecastCondition";
+import { FlexColumn } from "../../ui/Flex";
 
 const StyledSearchesElement = styled(ListElement)`
 	background-color: var(--background-color-1);
@@ -21,9 +22,7 @@ const StyledSearchesElement = styled(ListElement)`
 	}
 `;
 
-const Box = styled.div`
-	display: flex;
-	flex-direction: column;
+const Box = styled(FlexColumn)`
 	justify-content: space-between;
 	padding-left: 2.6rem;
 

@@ -3,23 +3,21 @@ import { GiRaining, GiSnowing } from "react-icons/gi";
 import PropTypes from "prop-types";
 
 import Container from "../../ui/Container";
+import { FlexColumn, FlexRow } from "../../ui/Flex";
 
 const StyledBasicInfo = styled(Container)`
-	background-color: inherit;
 	display: flex;
+	background-color: inherit;
 	padding: 1.6rem;
 `;
 
-const Box = styled.div`
-	display: flex;
+const Box = styled(FlexRow)`
 	padding-top: 1.2rem;
 	gap: 1.2rem;
 `;
 
-const InfoContainer = styled.div`
+const InfoContainer = styled(FlexColumn)`
 	width: 75%;
-	display: flex;
-	flex-direction: column;
 
 	&:nth-child(2) {
 		width: 25%;
@@ -30,9 +28,7 @@ const CityNameInfo = styled.h2`
 	color: var(--font-color-2);
 `;
 
-const Precipitation = styled.div`
-	display: flex;
-	flex-direction: column;
+const Precipitation = styled(FlexColumn)`
 	font-size: 4.2rem;
 	font-weight: var(--font-weight-500);
 	align-items: center;
@@ -52,8 +48,7 @@ const TemperatureInfo = styled.span`
 	text-align: end;
 `;
 
-const ImageContainer = styled.div`
-	display: flex;
+const ImageContainer = styled(FlexRow)`
 	justify-content: flex-end;
 	align-items: center;
 	max-height: 100%;

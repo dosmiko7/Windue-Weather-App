@@ -4,33 +4,29 @@ import { TbWind } from "react-icons/tb";
 
 import ForecastCondition from "./ForecastCondition";
 import ListElement from "../../ui/ListElement";
+import { FlexRow } from "../../ui/Flex";
 
-const Box = styled.span`
+const Day = styled.div`
 	font-size: 1.8rem;
-
-	@media only screen and (width <= 1280px) {
-		font-size: 2.6rem;
-	}
-`;
-
-const Day = styled(Box)`
 	width: 30%;
 	margin-left: 1.6rem;
 
 	@media only screen and (width <= 1280px) {
+		font-size: 2.6rem;
 		margin-left: 0;
 		text-align: center;
 	}
 `;
 
-const Wind = styled(Box)`
-	display: flex;
+const Wind = styled(FlexRow)`
+	font-size: 1.8rem;
 	align-items: center;
 	justify-content: flex-end;
 	width: 30%;
 	gap: 0.2rem;
 
 	@media only screen and (width <= 1280px) {
+		font-size: 2.6rem;
 		justify-content: center;
 		padding-bottom: 1.2rem;
 	}

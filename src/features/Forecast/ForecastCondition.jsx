@@ -1,9 +1,8 @@
 import { styled } from "styled-components";
 import PropTypes from "prop-types";
+import Image from "../../ui/Image";
 
 const ImageContainer = styled.div``;
-
-const Image = styled.img``;
 
 const ForecastCondition = ({ condition }) => {
 	return (

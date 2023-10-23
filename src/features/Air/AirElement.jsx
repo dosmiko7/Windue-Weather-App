@@ -1,16 +1,14 @@
 import { styled } from "styled-components";
 import PropTypes from "prop-types";
+import { FlexColumn, FlexRow } from "../../ui/Flex";
 
-const StyledAirElement = styled.div`
-	display: flex;
+const StyledAirElement = styled(FlexRow)`
 	gap: 1.2rem;
 `;
 
 const SymbolContainer = styled.div``;
 
-const Info = styled.div`
-	display: flex;
-	flex-direction: column;
+const Info = styled(FlexColumn)`
 	gap: 0.6rem;
 	padding-bottom: 0.8rem;
 `;

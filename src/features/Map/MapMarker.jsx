@@ -1,9 +1,10 @@
 import { Marker, Popup } from "react-leaflet";
-import PropTypes from "prop-types";
 import { styled } from "styled-components";
+import PropTypes from "prop-types";
+
+import Image from "../../ui/Image";
 
 const CityName = styled.h5``;
-const Image = styled.img``;
 const Temperature = styled.span`
 	font-weight: var(--font-weight-500);
 `;

@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import PropTypes from "prop-types";
+import { styled } from "styled-components";
 
 import Container, { ContainerName } from "../../ui/Container";
 import SuggestionsList from "./SuggestionsList";
+import Spinner from "../../ui/Spinner";
 import getCities from "../../services/apiCities";
 import { formatCities } from "../../utils/formatData";
-import Spinner from "../../ui/Spinner";
-import { styled } from "styled-components";
 
 const Info = styled.h3`
 	margin-left: 0.6rem;

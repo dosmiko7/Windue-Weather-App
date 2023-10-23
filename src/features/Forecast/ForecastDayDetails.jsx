@@ -5,10 +5,8 @@ import { TbWind } from "react-icons/tb";
 import { styled } from "styled-components";
 import Container from "../../ui/Container";
 import CurrentForecast from "./CurrentForecast";
-
-const Flex = styled.div`
-	display: flex;
-`;
+import { FlexColumn, FlexRow } from "../../ui/Flex";
+import Image from "../../ui/Image";
 
 const StyledDetails = styled(Container)`
 	display: flex;
@@ -23,8 +21,7 @@ const StyledDetails = styled(Container)`
 	}
 `;
 
-const NameContainer = styled(Flex)`
-	flex-direction: column;
+const NameContainer = styled(FlexColumn)`
 	gap: 0.6rem;
 `;
 
@@ -32,12 +29,12 @@ const Day = styled.h2`
 	color: var(--font-color-2);
 `;
 
-const Wind = styled(Flex)`
+const Wind = styled(FlexRow)`
 	align-items: center;
 	gap: 0.8rem;
 `;
 
-const Box = styled(Flex)`
+const Box = styled(FlexRow)`
 	gap: 1.6rem;
 	justify-content: end;
 `;
@@ -52,13 +49,11 @@ const Details = styled(Container)`
 	}
 `;
 
-const ConditionContainer = styled(Flex)`
-	flex-direction: column;
+const ConditionContainer = styled(FlexColumn)`
 	align-items: center;
 `;
 
-const Precipitation = styled(Flex)`
-	flex-direction: column;
+const Precipitation = styled(FlexColumn)`
 	gap: 0.6rem;
 	font-size: 4.2rem;
 	font-weight: var(--font-weight-500);
@@ -71,12 +66,11 @@ const Value = styled.span`
 	width: 100%;
 `;
 
-const ImageContainer = styled(Flex)`
-	align-items: center;
+const ImageContainer = styled(FlexRow)`
 	max-height: 100%;
 `;
 
-const Image = styled.img`
+const ConditionImage = styled(Image)`
 	width: 8.8rem;
 `;
 
@@ -99,7 +93,7 @@ const ForecastDayDetails = ({ day }) => {
 				</NameContainer>
 				<ConditionContainer>
 					<ImageContainer>
-						<Image
+						<ConditionImage
 							src={day.condition.icon}
 							alt={day.condition.text}
 						/>

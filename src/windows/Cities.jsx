@@ -9,10 +9,9 @@ import List from "../ui/List";
 import Sidebar from "../ui/Sidebar";
 import OutletLayout from "../ui/OutletLayout";
 import useWeather from "../hooks/useWeather";
+import { FlexColumn } from "../ui/Flex";
 
-const Box = styled.div`
-	display: flex;
-	flex-direction: column;
+const Box = styled(FlexColumn)`
 	justify-content: space-between;
 	row-gap: 2.6rem;
 `;
