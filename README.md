@@ -26,7 +26,7 @@ Using the button, we can change the entire application theme with one click.
 
 ## 📏 Responsiveness
 The application is fully responsive and adapts to the current resolution of your screen.
-![Desktop](documentation/images/responsiveness/Desktop.png) 
+![Desktop](documentation/images/responsiveness/desktop.png) 
 ![Mobile](documentation/images/responsiveness/Mobile.png)
 
 
