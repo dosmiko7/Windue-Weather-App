@@ -6,7 +6,7 @@ export const formatForecast = (data) => {
 		rainProb: data.forecast.forecastday[0].day.daily_chance_of_rain,
 		snowProb: data.forecast.forecastday[1].day.daily_chance_of_snow,
 		temp: data.current.temp_c,
-		condition: { icon: data.current.condition.icon, text: data.current.condition.text },
+		condition: { icon: formatConditionURL(data.current.condition.icon), text: data.current.condition.text },
 		details: {
 			carbon: data.current.air_quality.co,
 			nitrogen: data.current.air_quality.no2,
@@ -28,7 +28,7 @@ export const formatForecast = (data) => {
 				day: hourData.time.slice(0, 10),
 				time: hourData.time.slice(-5),
 				condition: {
-					icon: hourData.condition.icon,
+					icon: formatConditionURL(hourData.condition.icon),
 					text: hourData.condition.text,
 				},
 				temp: hourData.temp_c,
@@ -42,7 +42,7 @@ export const formatForecast = (data) => {
 		let tmpObj = {};
 
 		tmpObj["day"] = convertDateIntoDayName(day.date);
-		tmpObj["condition"] = { icon: day.day.condition.icon, text: day.day.condition.text };
+		tmpObj["condition"] = { icon: formatConditionURL(day.day.condition.icon), text: day.day.condition.text };
 		tmpObj["wind"] = day.day.avgvis_km;
 		tmpObj["rainProb"] = day.day.daily_chance_of_rain;
 		tmpObj["snowProb"] = day.day.daily_chance_of_snow;
@@ -50,7 +50,7 @@ export const formatForecast = (data) => {
 		day.hour.forEach((hour) => {
 			details.push({
 				time: hour.time.slice(-5),
-				condition: { icon: hour.condition.icon, text: hour.condition.text },
+				condition: { icon: formatConditionURL(hour.condition.icon), text: hour.condition.text },
 				temp: hour.temp_c,
 			});
 		});
@@ -103,4 +103,10 @@ export const formatCities = (data) => {
 		});
 	}
 	return formattedCities;
+};
+
+const formatConditionURL = (url) => {
+	const resultUrl = url.substring(20);
+
+	return resultUrl;
 };
