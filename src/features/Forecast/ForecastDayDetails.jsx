@@ -1,8 +1,9 @@
 import PropTypes from "prop-types";
+import { styled } from "styled-components";
 import { GiRaining, GiSnowing } from "react-icons/gi";
 import { TbWind } from "react-icons/tb";
 
-import { styled } from "styled-components";
+import { useSmallRes } from "../../hooks/useSmallRes";
 import Container from "../../ui/Container";
 import CurrentForecast from "./CurrentForecast";
 import { FlexColumn, FlexRow } from "../../ui/Flex";
@@ -81,7 +82,7 @@ const TemperatureInfo = styled.span`
 `;
 
 const ForecastDayDetails = ({ day }) => {
-	const smallResolution = window.innerWidth <= 950;
+	const { isSmallRes } = useSmallRes();
 	return (
 		<StyledDetails>
 			<Details>
@@ -114,7 +115,7 @@ const ForecastDayDetails = ({ day }) => {
 			<Container>
 				<CurrentForecast
 					hoursDataList={day.details}
-					hoursCount={smallResolution ? 3 : 4}
+					hoursCount={isSmallRes ? 3 : 4}
 				/>
 			</Container>
 		</StyledDetails>

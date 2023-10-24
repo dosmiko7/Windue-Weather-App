@@ -28,9 +28,9 @@ const ImageContainer = styled(Container)`
 		height: 50%;
 	}
 `;
+
 const Image = styled.img`
 	height: 100%;
-	max-width: auto;
 `;
 
 const MessageContainer = styled(Container)`

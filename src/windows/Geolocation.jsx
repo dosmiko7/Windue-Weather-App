@@ -6,6 +6,7 @@ import OutletLayout from "../ui/OutletLayout";
 import Map from "../features/Map/Map";
 import Sidebar from "../ui/Sidebar";
 import LatestSearches from "../features/LatestSearches/LatestSearches";
+import { useMediumRes } from "../hooks/useMediumRes";
 
 const PositionedOutletLayout = styled(OutletLayout)`
 	@media only screen and (width <= 1280px) {
@@ -21,7 +22,7 @@ const PositionedSidebar = styled(Sidebar)`
 
 const Geolocation = () => {
 	const { forecast, searchHistory, updateForecast } = useWeather();
-	const mediumResolution = window.innerWidth <= 1280;
+	const { isMediumRes } = useMediumRes();
 
 	return (
 		<PositionedOutletLayout>
@@ -32,7 +33,7 @@ const Geolocation = () => {
 			<PositionedSidebar variant="nonColor">
 				<LatestSearches
 					searchHistory={searchHistory}
-					count={mediumResolution ? 4 : 5}
+					count={isMediumRes ? 4 : 5}
 				/>
 			</PositionedSidebar>
 		</PositionedOutletLayout>

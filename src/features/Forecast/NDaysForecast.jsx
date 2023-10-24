@@ -2,6 +2,7 @@ import PropTypes from "prop-types";
 import { styled } from "styled-components";
 import { CiCircleMore } from "react-icons/ci";
 
+import { useMediumRes } from "../../hooks/useMediumRes";
 import Container, { ContainerName } from "../../ui/Container";
 import ForecastList from "./ForecastList";
 import NDaysForecastElement from "../Forecast/NDaysForecastElement";
@@ -35,14 +36,14 @@ const StyledModal = styled(Modal)`
 `;
 
 const NDaysForecast = ({ nDayForecast, daysCount, variant }) => {
-	const mediumResolution = window.innerWidth <= 1280;
+	const { isMediumRes } = useMediumRes();
 
 	const generateForecastComponents = () => {
 		return nDayForecast.slice(0, daysCount).map((item) => (
 			<StyledModal key={Math.random()}>
 				<NDaysForecastElement
 					data={item}
-					orientation={mediumResolution ? "vertical" : "horizontal"}
+					orientation={isMediumRes ? "vertical" : "horizontal"}
 				>
 					<Modal.Open opens={item.day}>
 						<StyledButton>
@@ -62,7 +63,7 @@ const NDaysForecast = ({ nDayForecast, daysCount, variant }) => {
 			<ContainerName>{daysCount}-Day Forecast</ContainerName>
 			<ForecastList
 				internalEls={generateForecastComponents()}
-				orientation={mediumResolution ? "horizontal" : "vertical"}
+				orientation={isMediumRes ? "horizontal" : "vertical"}
 			/>
 		</StyledNDaysForecast>
 	);
