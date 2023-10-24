@@ -1,4 +1,4 @@
-import { css, styled } from "styled-components";
+import styled, { css } from "styled-components";
 import PropTypes from "prop-types";
 import { FlexRow } from "./Flex";
 import Image from "./Image";

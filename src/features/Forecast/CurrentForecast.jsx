@@ -1,4 +1,4 @@
-import { styled } from "styled-components";
+import styled from "styled-components";
 import PropTypes from "prop-types";
 import { useState } from "react";
 import { TbArrowLeft, TbArrowRight } from "react-icons/tb";

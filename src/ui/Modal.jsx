@@ -1,4 +1,4 @@
-import { styled } from "styled-components";
+import styled from "styled-components";
 import { cloneElement, createContext, useContext, useState } from "react";
 import { createPortal } from "react-dom";
 import PropTypes from "prop-types";

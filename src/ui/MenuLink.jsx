@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { styled } from "styled-components";
+import styled from "styled-components";
 import PropTypes from "prop-types";
 
 import Button from "./Button";

@@ -1,5 +1,5 @@
 import { FaSearch } from "react-icons/fa";
-import { styled } from "styled-components";
+import styled from "styled-components";
 import { useState } from "react";
 
 import useWeather from "../hooks/useWeather";

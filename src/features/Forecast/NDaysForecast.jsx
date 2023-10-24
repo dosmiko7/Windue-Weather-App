@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import { styled } from "styled-components";
+import styled from "styled-components";
 import { CiCircleMore } from "react-icons/ci";
 
 import { useMediumRes } from "../../hooks/useMediumRes";

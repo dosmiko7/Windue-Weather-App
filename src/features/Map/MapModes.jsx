@@ -1,4 +1,4 @@
-import { styled } from "styled-components";
+import styled from "styled-components";
 import { TbMap, TbTemperature, TbWind, TbCloud, TbDroplets, TbStepInto } from "react-icons/tb";
 import PropTypes from "prop-types";
 

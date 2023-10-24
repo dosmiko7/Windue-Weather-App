@@ -1,4 +1,4 @@
-import { styled } from "styled-components";
+import styled from "styled-components";
 import { useMoveBack } from "../hooks/useMoveBack";
 
 import Container from "../ui/Container";

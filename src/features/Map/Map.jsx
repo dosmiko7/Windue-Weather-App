@@ -1,6 +1,6 @@
 import { MapContainer, TileLayer } from "react-leaflet";
 import { useEffect, useRef, useState } from "react";
-import { styled } from "styled-components";
+import styled from "styled-components";
 import PropTypes from "prop-types";
 
 import Container from "../../ui/Container";

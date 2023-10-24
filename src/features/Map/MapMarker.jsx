@@ -1,5 +1,5 @@
 import { Marker, Popup } from "react-leaflet";
-import { styled } from "styled-components";
+import styled from "styled-components";
 import PropTypes from "prop-types";
 
 import Image from "../../ui/Image";

@@ -1,4 +1,4 @@
-import { styled } from "styled-components";
+import styled from "styled-components";
 
 import ForecastBasicInfo from "../features/Forecast/ForecastBasicInfo";
 import CurrentForecast from "../features/Forecast/CurrentForecast";

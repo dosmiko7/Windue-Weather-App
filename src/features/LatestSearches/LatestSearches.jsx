@@ -2,8 +2,8 @@ import PropTypes from "prop-types";
 
 import Container, { ContainerName } from "../../ui/Container";
 import LatestSearchesList from "./LatestSearchesList";
-import { styled } from "styled-components";
-import { useMediumRes} from "../../hooks/useMediumRes";
+import styled from "styled-components";
+import { useMediumRes } from "../../hooks/useMediumRes";
 
 const StyledLatestSearches = styled(Container)`
 	@media only screen and (width <= 1280px) {

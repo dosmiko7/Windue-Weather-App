@@ -1,5 +1,5 @@
 import { TbMoonFilled, TbSunFilled } from "react-icons/tb";
-import { styled } from "styled-components";
+import styled from "styled-components";
 
 import Button from "./Button";
 import useDarkTheme from "../hooks/useDarkTheme";

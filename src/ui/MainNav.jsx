@@ -1,4 +1,4 @@
-import { styled } from "styled-components";
+import styled from "styled-components";
 import { FaCloudSunRain, FaList, FaMap } from "react-icons/fa6";
 
 import MenuLink from "./MenuLink";

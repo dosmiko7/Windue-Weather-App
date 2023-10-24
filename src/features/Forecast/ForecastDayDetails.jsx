@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import { styled } from "styled-components";
+import styled from "styled-components";
 import { GiRaining, GiSnowing } from "react-icons/gi";
 import { TbWind } from "react-icons/tb";
 
