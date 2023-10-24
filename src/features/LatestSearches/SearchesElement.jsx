@@ -33,7 +33,10 @@ const Box = styled(FlexColumn)`
 
 const CityName = styled.h4`
 	color: var(--font-color-2);
-	text-align: center;
+
+	@media only screen and (width <= 1280px) {
+		text-align: center;
+	}
 `;
 
 const Time = styled.span`
