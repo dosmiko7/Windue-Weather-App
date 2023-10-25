@@ -20,7 +20,7 @@ const App = () => {
 				<BrowserRouter>
 					<Routes>
 						<Route
-							index
+							path="/"
 							element={<Starter />}
 						/>
 						<Route element={<AppLayout />}>
