@@ -1,6 +1,4 @@
 import PropTypes from "prop-types";
-import { weatherAPIKey } from "./APIKeys";
-
 /*
 	Note: The free version of WeatherAPI can not support more than 3 days
 */
@@ -9,7 +7,9 @@ const getForecast = async ({ city, days = 3 }) => {
 
 	try {
 		const response = await fetch(
-			`https://api.weatherapi.com/v1/forecast.json?key=${weatherAPIKey}&q=${city}&days=${correctDays}&aqi=yes&alerts=no`
+			`https://api.weatherapi.com/v1/forecast.json?key=${
+				import.meta.env.VITE_WEATHER_API_KEY
+			}&q=${city}&days=${correctDays}&aqi=yes&alerts=no`
 		);
 		const forecast = await response.json();
 		return forecast;
