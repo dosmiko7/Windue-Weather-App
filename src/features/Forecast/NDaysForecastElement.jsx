@@ -8,7 +8,7 @@ import { FlexRow } from "../../ui/Flex";
 
 const Day = styled.div`
 	font-size: 1.8rem;
-	width: 30%;
+	width: 100%;
 	margin-left: 1.6rem;
 
 	@media only screen and (width <= 1280px) {
